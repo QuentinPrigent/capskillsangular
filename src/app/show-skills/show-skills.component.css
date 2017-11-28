@@ -1,0 +1,40 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 800px;
+  margin: 80px 25% 40px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 800px;
+  > .mat-header-row, > .mat-row {
+        display: table-row;
+        padding: 0;
+        border: 1px;
+        font-family: verdana;
+        color: #ffffff !important;
+        font-weight: bold;
+
+        > .mat-header-cell, > .mat-cell {
+            display: table-cell;
+            height: 48px;
+            vertical-align: middle;
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    }
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-button, .mat-raised-button{
+    background-color:#007dba !important;
+    width:100px !important;
+    display: block !important;
+     
+     left: 700px;
+}
+

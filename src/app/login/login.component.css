@@ -1,0 +1,36 @@
+.section {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.9);
+	margin: 80px auto 0 auto;
+	border: 1px solid #ccc;
+	position: relative;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+				0 25px 50px 0 rgba(0, 0, 0, 0.15);
+	width:30%;
+	min-width: 300px;
+	padding:15px; 
+}
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+.mat-button, .mat-raised-button{
+    background-color:#007dba;
+    width:100px;
+    font-family: verdana;
+    color: #ffffff !important;
+    font-weight: bold;
+    display: block !important;
+}
+.mat-checkbox {
+font-size: 12px;
+}
+

@@ -1,0 +1,77 @@
+<img src="../assets/img/user.png" height="50px" width="50px">collaborateur@capgemini.com
+<div class="example-container mat-elevation-z8" >
+
+  <mat-table #table [dataSource]="dataSource" matSort >
+
+    <!-- Categories Column -->
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Categories </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+    </ng-container>
+
+    <!-- skill Column -->
+    <ng-container matColumnDef="skill">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Skill </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.skill}} </mat-cell>
+    </ng-container>
+
+    <!-- Actual Level Column -->
+    <ng-container matColumnDef="actualLevel">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Actual Grade</mat-header-cell>
+      <mat-cell *matCellDef="let element">  <div class="rating medium star-icon direction-ltl value-{{element.actualLevel}}  half color-ok slow">
+    <div class="star-container">
+        <div class="star" *ngFor="let index of [0,1,2,3,4]">
+            <i class="star-empty"></i>
+            <i class="star-half"></i>
+            <i class="star-filled"></i>
+        </div>
+    </div>
+</div>  </mat-cell>
+    </ng-container>
+
+    <!-- grade-target Column -->
+    <ng-container matColumnDef="gradeTarget">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Grade Target</mat-header-cell>
+      <mat-cell *matCellDef="let element"> 
+         <div class="rating medium star-icon direction-ltl value-{{element.gradeTarget}}  half color-ok slow">
+    <div class="star-container">
+        <div class="star" *ngFor="let index of [0,1,2,3,4]">
+            <i class="star-empty"></i>
+            <i class="star-half"></i>
+            <i class="star-filled"></i>
+        </div>
+    </div>
+</div>
+       </mat-cell>
+    </ng-container>
+
+     <!-- grade-objectif Column -->
+    <ng-container matColumnDef="gradeObjectif">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Grade Objectif</mat-header-cell>
+      <mat-cell *matCellDef="let element"> 
+      <div class="rating medium star-icon direction-ltl value-{{element.gradeObjectif}}  half color-ok slow">
+    <div class="star-container">
+        <div class="star" *ngFor="let index of [0,1,2,3,4]">
+            <i class="star-empty"></i>
+            <i class="star-half"></i>
+            <i class="star-filled"></i>
+        </div>
+    </div>
+</div>
+ </mat-cell>
+    </ng-container>
+
+     <!-- Modify Column -->
+    <ng-container matColumnDef="modify">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Modify</mat-header-cell>
+      <mat-cell *matCellDef="let element"> <img src="../assets/img/modify.png" height="20px" width="20px">{{element.modify}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" ><</mat-row>
+  </mat-table>
+
+
+</div>
+<button mat-raised-button [routerLink]="['/skills/add']">Add Skill</button>
+
