@@ -1,0 +1,20 @@
+
+   
+  <div mat-dialog-title>Update</div>
+    <div mat-dialog-content>
+      <h6>{{data.skillType}}</h6>
+      <h6>{{data.skill}}</h6>
+      <div> Actual Grade
+          <star-rating-comp [starType]="'svg'" [rating]=data.actualGrade (onClick)="onClickActualGrade($event)" ></star-rating-comp>
+          Collaborator Grade
+          <star-rating-comp [starType]="'svg'" [rating]=data.collaboratorGrade  (onClick)="onClickCollaboratorGrade($event)"></star-rating-comp>
+      </div> 
+     
+    </div>
+     <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="data" >Ok</button>
+        <button mat-button (click)="onCancel()" >Cancel</button>
+      </div>
+      
+  
+  

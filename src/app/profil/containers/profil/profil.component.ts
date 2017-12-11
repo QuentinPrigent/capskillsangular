@@ -49,7 +49,7 @@ export class ProfilComponent implements OnInit {
       'email'	: 'pierre.ned@capgemini.com',
       'password'	 : 'jaimebnpparibas'
     };
-    console.log(params);
+    // console.log(params);
     this.service.addUser(params).subscribe((data) => console.log(data));
   }
 

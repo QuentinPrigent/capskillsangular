@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators,} from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core/src/metadata/view';
 
 @Component({
@@ -10,7 +10,6 @@ import { ViewEncapsulation } from '@angular/core/src/metadata/view';
 export class LoginComponent implements OnInit {
 
   hide = true;
-
   email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
@@ -22,6 +21,5 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
+}
 }
