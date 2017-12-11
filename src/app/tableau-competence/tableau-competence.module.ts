@@ -11,8 +11,8 @@ import { TableauCompetenceComponent, TableauCompetenceUpdateComponent } from './
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { StarRatingModule } from 'angular-star-rating';
-import {OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent} from 'angular-star-rating';
-import {HttpModule} from '@angular/http';
+import { OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent } from 'angular-star-rating';
+import { HttpModule } from '@angular/http';
 
 
 

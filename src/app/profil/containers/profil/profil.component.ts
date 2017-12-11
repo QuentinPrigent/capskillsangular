@@ -1,7 +1,8 @@
 import { UsersService } from './../../Services/users.service';
 import { Component, OnInit } from '@angular/core';
-import {single} from './data';
-import {polar} from './polardata';
+import { single } from './data';
+import { polar } from './polardata';
+
 @Component({
   selector: 'skills-profil',
   templateUrl: './profil.component.html',
@@ -15,7 +16,7 @@ export class ProfilComponent implements OnInit {
 
   view: any[] = [700, 400];
 
-  // options 
+  // options
   showXAxis = true;
   showYAxis = true;
   gradient = false;
@@ -42,7 +43,7 @@ export class ProfilComponent implements OnInit {
   }
 
   addUser() {
-    
+
     const params = {
       'firstname':	'pierre',
       'lastname':	'ned',

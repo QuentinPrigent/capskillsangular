@@ -1,0 +1,21 @@
+<p>
+    bilan works!
+  </p>
+
+  <button routerLink='/login'>Déco</button>
+  
+  
+  <ngx-charts-polar-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="polar"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+  </ngx-charts-polar-chart>
