@@ -7,7 +7,7 @@ export class UsersService {
   constructor(public http: HttpClient) { }
 
   getUsers() {
-    return this.http.get('http://localhost:1214/users/' );
+    return this.http.get('http://localhost:1214/users/');
   }
 
   addUser(params) {

@@ -17,8 +17,12 @@
   profil works!
 </p>
 
-
-
+<tr *ngFor='let user of users'>
+  <td ddtf-value>{{user.email}}</td>
+<!--   <td ddtf-value>{{skill.skillType.generalSkillType.name}}</td>
+  <td ddtf-value>{{skill.SkillType.name}}</td>
+  <td ddtf-value>{{skill.name}}</td>  -->
+</tr>
 
 <!-- <div *ngFor='let user of users'>
 <h5> {{user.email }} </h5>

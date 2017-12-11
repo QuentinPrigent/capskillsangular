@@ -8,16 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
+  users: any;
+
   constructor(private dao: UsersService) {
   }
 
   ngOnInit() {
-/*     this.dao.getUsers()
-      .subscribe(
-        data => data.forEach(elt => console.log(elt)),
-        err => console.error(`Erreur: `, err)
-      ); */
+    this.dao.getUsers().subscribe((data: any) => this.users = data);
 
+/*   this.dao.getUsers()
+    .subscribe(
+      data => data.forEach(elt => console.log(elt)),
+      err => console.error(`Erreur: `, err)
+    ); */
 
 /*     this.dao.getUsers()
       .subscribe(
