@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { UsersService } from './Services/users.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,13 +8,16 @@ import { BilanComponent } from './containers/bilan/bilan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers : [UsersService],
   declarations: [ProfilComponent, BilanComponent],

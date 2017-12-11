@@ -1,0 +1,40 @@
+
+.header {
+    background-color: white;
+}
+
+.space{
+    flex: 1 1 auto;
+}
+
+.image{
+    width: 300px;
+    padding-top: 50px;
+}
+
+.text-header {
+    font-family: 'Verdana', serif;
+    font-size: 30px;
+    padding-top: 30px;
+    font-weight: bold;
+    color: grey;
+}
+
+.logimage{
+    margin: 65px auto 0 auto;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+    color: black;
+    }
+      
+.mat-button, .mat-raised-button{
+    background-color:#007dba !important;
+    
+    display: block !important;
+    -webkit-text-fill-color: white!important;
+}
+
+.mat-dialog-title{
+    background-color:#007dba;
+}

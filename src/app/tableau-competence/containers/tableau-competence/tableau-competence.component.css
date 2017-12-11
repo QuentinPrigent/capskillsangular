@@ -13,7 +13,8 @@
     padding:15px; 
    
   }
-  .space{
+
+.space{
     flex: 1 1 auto;
 }
 
@@ -33,11 +34,11 @@
     background-color: white;
 }
 
-
 .image{
     width: 300px;
     padding-top: 50px;
 }
+
 fieldset {
     position: relative;   
     font-family: sans-serif;
@@ -87,17 +88,17 @@ legend {
       }
   }
   
-  .mat-header-cell.mat-sort-header-sorted {
-    color: black;
-  }
+.mat-header-cell.mat-sort-header-sorted {
+color: black;
+}
   
-  .mat-button, .mat-raised-button{
-      background-color:#007dba !important;
-      
-      display: block !important;
-      -webkit-text-fill-color: white!important;
-  }
+.mat-button, .mat-raised-button{
+    background-color:#007dba !important;
+    
+    display: block !important;
+    -webkit-text-fill-color: white!important;
+}
   
-  .mat-dialog-title{
+.mat-dialog-title{
     background-color:#007dba;
 }

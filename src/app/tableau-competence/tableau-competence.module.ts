@@ -6,7 +6,7 @@ import { MatFormFieldModule, MatTableModule, MatCardModule, MatIconModule, MatIn
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
-import {MatTableDataSource, MatSort} from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 import { TableauCompetenceComponent, TableauCompetenceUpdateComponent } from './containers/tableau-competence/tableau-competence.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
