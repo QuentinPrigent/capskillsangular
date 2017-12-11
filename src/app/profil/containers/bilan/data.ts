@@ -27,7 +27,7 @@ export let single = [
         }
       ]
     },
-  
+
     {
       'name': 'USA',
       'series': [

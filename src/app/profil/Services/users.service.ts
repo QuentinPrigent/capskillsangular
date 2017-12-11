@@ -9,6 +9,7 @@ export class UsersService {
   getUsers() {
     return this.http.get('http://localhost:1214/users/' );
   }
+
   addUser(params) {
 
     // tslint:disable-next-line:max-line-length
