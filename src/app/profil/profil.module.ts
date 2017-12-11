@@ -1,3 +1,5 @@
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { UsersService } from './Services/users.service';
 import { NgModule } from '@angular/core';
@@ -17,7 +19,9 @@ import { MatToolbarModule } from '@angular/material';
     HttpClientModule,
     NgxChartsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers : [UsersService],
   declarations: [ProfilComponent, BilanComponent],
