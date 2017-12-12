@@ -17,6 +17,12 @@ export class ProfilComponent implements OnInit {
     this.dao.getUsers().subscribe((data: any) => this.users = data);
 
 /*   this.dao.getUsers()
+  .subscribe(
+    data => data.forEach(elt => this.users = data),
+    err => console.error(`Erreur: `, err)
+  ); */
+
+/*   this.dao.getUsers()
     .subscribe(
       data => data.forEach(elt => console.log(elt)),
       err => console.error(`Erreur: `, err)
