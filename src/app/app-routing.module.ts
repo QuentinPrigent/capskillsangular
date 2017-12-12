@@ -1,24 +1,21 @@
+import { SkillsComponent } from './tableau-competence/containers/skills/skills.component';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent }  from './login/login.component';
-import { ShowSkillsComponent }  from './show-skills/show-skills.component';
+import { Routes, RouterModule } from '@angular/router';
+import { ProfilComponent } from './profil/containers/profil/profil.component';
+import { LoginComponent } from './login/containers/login/login.component';
+import { TableauCompetenceComponent } from './tableau-competence/containers/tableau-competence/tableau-competence.component';
+
 const routes: Routes = [
-  
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-   { path: 'skills/show', component: ShowSkillsComponent },
+  {path : '', redirectTo: 'login', pathMatch: 'full'},
+  {path : 'login', component : LoginComponent},
+  {path : 'profile', component : ProfilComponent},
+  {path : 'TableauCompetenceComponent', component : TableauCompetenceComponent},
+  {path : 'skills', component : SkillsComponent},
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),
-    CommonModule
-  ],
-
-  exports: [ RouterModule ],
-  declarations: [],
-  
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-

@@ -1,0 +1,54 @@
+<mat-toolbar class = 'header'> 
+  <span> <img class = 'image' src = './assets/img/logocapskills.jpg'>  </span>
+ <span class = "space"></span>
+ <div layout="row" layout-wrap>
+   <br/> <br/>
+    <div flex="50"> <button mat-raised-button width="30" bgcolor="FFFFF">Deconnexion</button></div>
+    <br/>
+    <div flex="50" margin-top="20px"><button mat-raised-button>Referent profil</button> </div>
+ </div>
+</mat-toolbar>
+<div class = 'logimage'>
+<img src='image' src = './assets/img/user.png' height="50px" width="50px">collaborateur@capgemini.com
+</div>
+<fieldset class="fieldsetSection">
+  <legend>Skills Board</legend>
+<div class="section mat-elevation-z8" >
+
+
+  <mat-table #table [dataSource]="dataSource" matSort >
+     
+      <!-- Categories Column -->
+      <ng-container matColumnDef="skillType">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Skill Type </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.skillType}} </mat-cell>
+      </ng-container>
+  
+      <!-- skill Column -->
+      <ng-container matColumnDef="skill">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Skill </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.skill}} </mat-cell>
+      </ng-container>
+  
+      
+   
+     
+  
+       <!-- Modify Column -->
+      <ng-container matColumnDef="modify">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Modify</mat-header-cell>
+      <mat-cell *matCellDef="let element ;let i=index;"> 
+         <a (click)="openSkillsDialog(element,i)"><img src="../assets/img/modify.png" height="30px" width="30px" > </a> 
+      </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
+    </mat-table>
+    <br/>
+    <button mat-raised-button style=" padding-top:5px;">Add</button>
+ <!-- <button mat-raised-button [routerLink]="['/skills/add']">Add new Skill</button>-->
+  </div>
+</fieldset>
+  
+

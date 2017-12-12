@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~font-awesome/css/font-awesome.css";
+
+/*@import "~font-awesome/css/font-awesome.css";*/
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* Import star-rating styles */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+*{
+    font-family: 'Verdana', serif;
+}
+
+
+
 @import "~css-star-rating/dist/css/star-rating.css";
-
-

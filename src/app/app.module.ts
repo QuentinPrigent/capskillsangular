@@ -1,41 +1,27 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './/app-routing.module';
-import {HttpModule} from "@angular/http";
+/*import of moduels*/
 import { AppComponent } from './app.component';
-import { HeadersComponent } from './headers/headers.component';
-import { LoginComponent } from './login/login.component';
-import { ShowSkillsComponent }  from './show-skills/show-skills.component';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatIconModule,MatButtonModule,MatCardModule, MatTableModule,MatCheckboxModule } from '@angular/material';
-//star rating library
-
-
-
+import { LoginModule } from './login/login.module';
+import { ProfilModule } from './profil/profil.module';
+import { TableauCompetenceModule } from './tableau-competence/tableau-competence.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import {HttpModule} from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeadersComponent,
-    LoginComponent,
-    ShowSkillsComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
     AppRoutingModule,
+    BrowserModule,
+    LoginModule,
+    ProfilModule,
     HttpModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatTableModule,
-    MatCheckboxModule
-    
+    HttpClientModule,
+    TableauCompetenceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

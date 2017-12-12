@@ -1,0 +1,10 @@
+<div mat-dialog-title>SkillType</div>
+<div mat-dialog-content>
+  <h6>{{data.skillType}}</h6>
+  <h6>{{data.skill}}</h6>
+</div>
+ <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" >Ok</button>
+    <button mat-button (click)="onCancel()" >Cancel</button>
+  </div>
+  
