@@ -9,7 +9,7 @@ import { BilanComponent } from './profil/containers/bilan/bilan.component';
 const routes: Routes = [
   {path : '', redirectTo: 'login', pathMatch: 'full'},
   {path : 'login', component : LoginComponent},
-  {path : 'profile', component : ProfilComponent},
+  {path : 'profil', component : ProfilComponent},
   {path : 'tabconscomp', component : TabconscompComponent},
   {path : 'bilan', component : BilanComponent }
 

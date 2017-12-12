@@ -15,10 +15,6 @@
 
 /* CSS DES BOUTONS */
 
-.career-manager-button{
-    margin-top: 500 px;
-}
-
 .mat-button, .mat-raised-button{
     background-color:#007dba; 
     display: block;

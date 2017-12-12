@@ -1,4 +1,4 @@
-import { UsersService } from './../../Services/users.service';
+import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
 import { single } from './data';
 import { polar } from './polardata';
@@ -30,7 +30,7 @@ export class BilanComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-  constructor(public service: UsersService) {
+  constructor(private service: UsersService) {
     Object.assign(this, {single});
     Object.assign(this, {polar});
    }

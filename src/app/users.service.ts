@@ -3,15 +3,27 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class UsersService {
+  root = 'http://localhost:1214/users/';
 
   constructor(public http: HttpClient) { }
 
+  private url(path: string) {
+    return this.root + path;
+  }
+  private get(path: string) {
+    return this.http.get(this.url(path));
+  }
+
+  login(email: string, password: string) {
+    return this.get(`login?email=${email}&password=${password}`);
+  }
+
   getUsers() {
-    return this.http.get('http://localhost:1214/users/');
+    return this.get('');
   }
 
   getSkills() {
-    return this.http.get('http://localhost:1214/users/display-skills/14');
+    return this.get('display-skills/2');
   }
 
   addUser(params) {

@@ -1,5 +1,6 @@
+import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators,} from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core/src/metadata/view';
 
 @Component({
@@ -11,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
@@ -18,7 +20,19 @@ export class LoginComponent implements OnInit {
             '';
   }
 
-  constructor() { }
+  login(event) {
+    if (this.email.valid && this.password.valid) {
+      // Run.
+      this.dao.login(this.email.value, this.password.value).subscribe(
+        data => console.log(data),
+        error => console.error(error.status)
+      );
+    } else {
+      console.error('Form errors');
+    }
+  }
+
+  constructor(private dao: UsersService) { }
 
   ngOnInit() {
 }

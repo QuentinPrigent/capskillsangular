@@ -5,7 +5,7 @@
   <div layout="row" layout-wrap>
      <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
        <br/>
-     <div><button mat-raised-button>Profil Référent</button> </div>
+     <div><button mat-raised-button routerLink='/tabconscomp'>Profil Référent</button> </div>
   </div>
 </mat-toolbar>
 <div class = 'logimage'>
@@ -22,12 +22,17 @@
     <tr class="table-header">
       <th>Catégories</th>
       <th>Compétences</th>
+      <th>Modifier</th>
     </tr>
     <tr *ngFor='let skill of skills'>
       <td>{{skill.skillType.skillTypeName}}</td>
       <td>{{skill.name}}</td>
+      <td><span class="glyphicon glyphicon-pencil"></span></td>
     </tr>
   </table>
 </div>
+
+
+
 
 <button mat-raised-button routerLink='/bilan'>Bilan</button>

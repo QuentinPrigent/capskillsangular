@@ -1,4 +1,4 @@
-import { UsersService } from './../../Services/users.service';
+import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,7 +17,7 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.dao.getUsers().subscribe((data: any) => this.users = data);
     this.dao.getSkills().subscribe((dataskills: any) => this.skills = dataskills);
-    }
+  }
 
 
 /*   this.dao.getUsers()
@@ -54,4 +54,4 @@ export class ProfilComponent implements OnInit {
         // this.service.addUser(params).subscribe((data) => console.log(data));
       }
 
-}
+
