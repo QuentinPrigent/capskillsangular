@@ -1,3 +1,4 @@
+import { AccueilreferentModule } from './accueilreferent/accueilreferent.module';
 import { NgModule } from '@angular/core';
 /*import of moduels*/
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfilModule,
     HttpModule,
     HttpClientModule,
-    TableauCompetenceModule
+    TableauCompetenceModule,
+    AccueilreferentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
