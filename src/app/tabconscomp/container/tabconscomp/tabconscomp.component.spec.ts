@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableauCompetenceComponent } from './tableau-competence.component';
+import { TabconscompComponent } from './tabconscomp.component';
 
-describe('TableauCompetenceComponent', () => {
-  let component: TableauCompetenceComponent;
-  let fixture: ComponentFixture<TableauCompetenceComponent>;
+describe('TabconscompComponent', () => {
+  let component: TabconscompComponent;
+  let fixture: ComponentFixture<TabconscompComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauCompetenceComponent ]
+      declarations: [ TabconscompComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableauCompetenceComponent);
+    fixture = TestBed.createComponent(TabconscompComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
