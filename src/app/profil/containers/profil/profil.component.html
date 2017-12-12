@@ -12,13 +12,22 @@
   <img src='image' src = './assets/img/user.png' height="50px" width="50px">collaborateur@capgemini.com
 </div>
 <!-- *************************************************************** -->
-
-<div *ngFor='let skill of skills'>
-  <h5> {{skill.name}} </h5>
-</div>
+ 
+<!-- <button (click)='addUser()'>Ajouter</button> -->
 
 <br>
 
+<div class="container-fluid">
+  <table id="tableCollaborator" class="table table-hover">
+    <tr class="table-header">
+      <th>Catégories</th>
+      <th>Compétences</th>
+    </tr>
+    <tr *ngFor='let skill of skills'>
+      <td>{{skill.skillType.skillTypeName}}</td>
+      <td>{{skill.name}}</td>
+    </tr>
+  </table>
+</div>
+
 <button mat-raised-button routerLink='/bilan'>Bilan</button>
- 
-<!-- <button (click)='addUser()'>Ajouter</button> -->

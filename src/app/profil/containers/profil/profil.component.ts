@@ -17,6 +17,8 @@ export class ProfilComponent implements OnInit {
   ngOnInit() {
     this.dao.getUsers().subscribe((data: any) => this.users = data);
     this.dao.getSkills().subscribe((dataskills: any) => this.skills = dataskills);
+    }
+
 
 /*   this.dao.getUsers()
   .subscribe(
