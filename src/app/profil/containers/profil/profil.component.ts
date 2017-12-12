@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilComponent implements OnInit {
 
   users: any;
+  skills: any;
 
   constructor(private dao: UsersService) {
   }
 
   ngOnInit() {
     this.dao.getUsers().subscribe((data: any) => this.users = data);
+    this.dao.getSkills().subscribe((dataskills: any) => this.skills = dataskills);
 
 /*   this.dao.getUsers()
   .subscribe(
