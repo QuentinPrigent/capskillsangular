@@ -32,17 +32,6 @@ export class ProfilComponent implements OnInit {
       err => console.error(`Erreur: `, err)
     ); */
 
-/*     this.dao.getUsers()
-      .subscribe(
-        function (data) {
-          data.forEach(function (elt) {
-            console.log(elt);
-          });
-        },
-        err => console.error(`Erreur: `, err)
-      );
-  } */
-
 /*   addUser() {
     const params = {
       'firstname':	'pierre',

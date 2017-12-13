@@ -14,26 +14,25 @@
 .text-header {
     font-family: 'Verdana', serif;
     font-size: 30px;
-    padding-top: 30px;
+    padding-top: 40px;
     font-weight: bold;
     color: grey;
 }
 
 .connexion {
-  background: #fff;  
   margin: 200px auto 0 auto;
   border: 1px solid #ccc;
   position: relative;    
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
               0 25px 50px 0 rgba(0, 0, 0, 0.15);
-  width:45%;
+  width: 50%;
   min-width: 300px;
+  max-width: 500px;
   padding:15px; 
 }
 
 .login {
+  padding-top: 10px;
   display: flex;
   flex-direction: column; 
 }
@@ -43,7 +42,8 @@
 }
 
 .password {
-  flex-direction: column;    
+  flex-direction: column;
+  padding-top: 5px;
 }
   
 .password > * {
@@ -68,4 +68,16 @@ input.example-right-align {
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  padding-bottom: 10px;
+}
+
+.mat-button, .mat-raised-button{
+  background-color:#007dba; 
+  display: block;
+  -webkit-text-fill-color: white;
+  width: 130px;
+}
+
+.mat-dialog-title{
+  background-color:#007dba;
 }
