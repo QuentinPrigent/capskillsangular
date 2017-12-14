@@ -121,8 +121,10 @@
     margin-top: 150px;;
   }
 
-
-
+  /*NIVEAU CSS*/
+.Niveau{
+  font-size: 35px;
+}
   
   /*RATING STARS CSS*/
 
@@ -158,4 +160,17 @@ input.star-1:checked ~ label.star:before { color: #F62; }
 label.star:before {
   content: '\f006';
   font-family: FontAwesome;
+}
+
+
+.level{
+  display: flex;
+  font-size: 25px;
+}
+
+
+/*LISTBUTTON CSS*/
+.listbutton{
+  font-size : 20px;
+  font-family: Verdana, sans-serif;
 }
