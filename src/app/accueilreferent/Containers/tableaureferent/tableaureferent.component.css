@@ -122,54 +122,40 @@
   }
 
 
+
   
   /*RATING STARS CSS*/
 
-  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-  
-  fieldset, label { margin: 0; padding: 0; }
-  body{ margin: 20px; }
-  h1 { font-size: 1.5em; margin: 10px; }
-  
-  /****** Style Star Rating Widget *****/
-  
-  .rating {
-  border: none;
-  float: left;
-  }
-  
-  .rating > input { display: none; } 
-  .rating > label:before {
-  margin: 5px;
-  font-size: 1.25em;
-  font-family: FontAwesome;
+div.stars {
+  width: 270px;
   display: inline-block;
-  content: "\f005";
-  }
-  
-  .rating > .half:before {
-  content: "\f089";
-  position: absolute;
-  }
-  
-  .rating > label {
-  color: #ddd;
-  float: right; 
-  }
-  
-  /***** CSS Magic to Highlight Stars on Hover *****/
-  
-  .rating > input:checked ~ label, /* show gold star when clicked */
-  .rating:not(:checked) > label:hover, /* hover current star */
-  .rating:not(:checked) > label:hover ~ label { color: #FFD700 ;  } /* hover previous stars in list */
-  
-  .rating > input:checked + label:hover, /* hover current star when changing rating */
-  .rating > input:checked ~ label:hover,
-  .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-  .rating > input:checked ~ label:hover ~ label { color: #FFED85 ;  }
-  
-  
-  [12:10] 
-  fieldset, label { margin: 0; padding: 0; }
-   /*aligner les etoiles*/
-   fieldset{ display: block }
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 20px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
