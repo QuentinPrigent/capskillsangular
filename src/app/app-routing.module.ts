@@ -14,7 +14,11 @@ const routes: Routes = [
     component : LoginComponent,
     resolve: { message: UsersResolver }
   },
-  {path : 'profil', component : ProfilComponent},
+  {
+    path : 'profil',
+    component : ProfilComponent,
+    resolve : { message: UsersResolver}
+  },
   {path : 'tabconscomp', component : TabconscompComponent},
   {path : 'bilan', component : BilanComponent }
 

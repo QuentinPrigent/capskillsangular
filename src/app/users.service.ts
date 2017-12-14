@@ -18,6 +18,10 @@ export class UsersService {
     return this.get(`login?email=${email}&password=${password}`);
   }
 
+/*   getTopPosts() {
+    return this.http.get(this.root);
+  } */
+
   getUsers() {
     return this.get('');
   }

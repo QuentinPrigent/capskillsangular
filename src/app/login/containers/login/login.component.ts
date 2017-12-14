@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
 
-  toto: any;
+  data: any;
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'Vous devez rentrer un email' :
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   constructor(private dao: UsersService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.toto = this.route.snapshot.data;
+    this.data = this.route.snapshot.data;
   }
 
 }
