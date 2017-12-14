@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ViewEncapsulation } from '@angular/core/src/metadata/view';
 import { RouterLink } from '@angular/router/src/directives/router_link';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'skills-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
 
+  toto: any;
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'Vous devez rentrer un email' :
@@ -33,9 +35,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  constructor(private dao: UsersService) { }
+  constructor(private dao: UsersService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.toto = this.route.snapshot.data;
   }
 
 }
