@@ -50,6 +50,7 @@
 <!------------------------------>
 
 <!-- Trigger the modal with a button -->
+
 <span class="searchbutton">
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Rechercher collaborateur</button>
 </span>
@@ -67,62 +68,65 @@
 
       <div class="modal-body">
 
-        <!--FIRT DROPDOWN FOR SKILL TYPES -->
-        <div class="container">
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Domaine de compétences
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1">Langage</a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">SoftSkills</a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">...</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <!--FIRT DROPDOWN SELECTION FOR SKILL TYPES -->
+        <select name="Catégories">
+          <option value="Catégorie1" selected="selected">Catégorie1 </option>
+          <option value="Catégorie2">Catégorie2 </option>
+          <option value="Catégorie3">Catégorie3 </option>
+          <option value="Catégorie4">Catégorie4 </option>
+          <option value="Catégorie5">Catégorie5 </option>
+          <option value="Cétégorie6">Cétégorie6 </option>
+        </select>
 
-        <!--SECOND DROPDOWN FOR SKILL TYPES -->
-        <div class="container">
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Domaine de compétences
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">Langage</a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">SoftSkills</a>
-              </li>
-              <li role="presentation">
-                <a role="menuitem" tabindex="-1" href="#">...</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <br>
+        <br>
+        <br>
+
+        <!--SECOND DROPDOWN SELECTION FOR SKILL TYPES -->
+        <select name="Compétences">
+          <option value="Compétence1 " selected="selected">Compétence1 </option>
+          <option value="Compétence2">Compétence2 </option>
+          <option value="Compétence3">Compétence3 </option>
+          <option value="Compétence4">Compétence4 </option>
+          <option value="Compétence5">Compétence5 </option>
+          <option value="Compétence6">Compétence6 </option>
+        </select>
+
+
+        <br>
+        <br>
 
         <!--STAR RATING -->
         <fieldset class="rating">
-          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+          <br>
+          <br>
+          <div>Niveau</div>
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label class="full" for="star5" title="Awesome - 5 stars"></label>
+          <input type="radio" id="star4half" name="rating" value="4 and a half" />
+          <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+          <input type="radio" id="star3half" name="rating" value="3 and a half" />
+          <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label class="full" for="star3" title="Meh - 3 stars"></label>
+          <input type="radio" id="star2half" name="rating" value="2 and a half" />
+          <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+          <input type="radio" id="star1half" name="rating" value="1 and a half" />
+          <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+          <input type="radio" id="starhalf" name="rating" value="half" />
+          <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
         </fieldset>
 
 
         <div class="modal-footer">
+          <br>
+          <br>
           <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
         </div>
       </div>
