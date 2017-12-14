@@ -6,11 +6,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 
+import { UsersService } from './users.service';
+
 @Injectable()
-export class UsersResolver implements Resolve<Observable<string>> {
-  constructor() {}
+export class UsersResolver implements Resolve<any> {
+  constructor(private usersService: UsersService) {}
 
   resolve() {
-    return Observable.of('Hello Alligator!').delay(2000);
+    return this.usersService.getTopPosts();
   }
 }
