@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { User } from './user';
+
 @Injectable()
 export class UsersService {
   root = 'http://localhost:1214/users/';
@@ -20,6 +22,14 @@ export class UsersService {
 
   getTopPosts() {
     return this.http.get(this.root);
+  }
+
+  getAll() {
+    return this.http.get<User[]>('http://localhost:1214/users/');
+  }
+
+  getById(id: number) {
+    return this.http.get('http://localhost:1214/users/' + id);
   }
 
   getUsers() {

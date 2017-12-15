@@ -1,4 +1,3 @@
-import { UsersResolver } from './users.resolver';
 import { TabconscompComponent } from './tabconscomp/container/tabconscomp/tabconscomp.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,16 +8,8 @@ import { BilanComponent } from './profil/containers/bilan/bilan.component';
 
 const routes: Routes = [
   {path : '', redirectTo: 'login', pathMatch: 'full'},
-  {
-    path : 'login',
-    component : LoginComponent,
-    resolve: { message: UsersResolver }
-  },
-  {
-    path : 'profil',
-    component : ProfilComponent,
-    resolve : { message: UsersResolver}
-  },
+  {path : 'login', component : LoginComponent},
+  {path : 'profil', component : ProfilComponent},
   {path : 'tabconscomp', component : TabconscompComponent},
   {path : 'bilan', component : BilanComponent }
 
@@ -27,8 +18,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [
-    UsersResolver
-  ]
+  providers: []
 })
 export class AppRoutingModule { }

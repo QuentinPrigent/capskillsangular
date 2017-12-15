@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
 
   data: any;
 
+  model: any = {};
+
   getErrorMessage() {
     return this.email.hasError('required') ? 'Vous devez rentrer un email' :
         this.email.hasError('email') ? 'L\'email n\'est pas valide' :
@@ -27,7 +29,8 @@ export class LoginComponent implements OnInit {
   login(event) {
     if (this.email.valid && this.password.valid) {
       this.dao.login(this.email.value, this.password.value).subscribe(
-        data => (console.log(data), window.location.href = './profil'),
+        data => (console.log(data), window.location.href = './profil', localStorage.setItem
+      ('currentUser', JSON.stringify(data))),
         error => console.error(error.status)
       );
     } else {

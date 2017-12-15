@@ -2,6 +2,8 @@ import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { User } from '../../../user';
+
 @Component({
   selector: 'skills-profil',
   templateUrl: './profil.component.html',
@@ -11,16 +13,22 @@ export class ProfilComponent implements OnInit {
 
   users: any;
   skills: any;
-
   data: any;
 
+  currentUser: User;
+
   constructor(private dao: UsersService, private route: ActivatedRoute) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
-    this.dao.getUsers().subscribe((data: any) => this.users = data);
-    this.dao.getSkills().subscribe((dataskills: any) => this.skills = dataskills);
-    this.data = this.route.snapshot.data;
+    this.loadAllUsers();
+/*     this.dao.getUsers().subscribe((data: any) => this.users = data);
+    this.data = this.route.snapshot.data; */
+  }
+
+  private loadAllUsers() {
+    this.dao.getAll().subscribe(users => { this.users = users; });
   }
 
 
