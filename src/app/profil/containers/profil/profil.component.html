@@ -26,8 +26,8 @@
       <th>Modifier</th>
     </tr>
     <tr *ngFor='let skill of skills'>
-      <td>{{skill.skillType.skillTypeName}}</td>
-      <td>{{skill.name}}</td>
+      <td>{{currentUser.firstname}}</td>
+      <td>{{currentUser.lastname}}</td>
       <td><span class="glyphicon glyphicon-pencil"></span></td>
     </tr>
   </table>
@@ -37,5 +37,3 @@
 
 
 <button mat-raised-button routerLink='/bilan'>Bilan</button>
-
-<p>the message: {{ data.message }}</p>
