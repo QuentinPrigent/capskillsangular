@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     if (this.email.valid && this.password.valid) {
       this.dao.login(this.email.value, this.password.value).subscribe(
         data => (console.log(data), window.location.href = './profil', localStorage.setItem
-      ('currentUser', JSON.stringify(data))),
+                ('currentUser', JSON.stringify(data))),
         error => console.error(error.status)
       );
     } else {

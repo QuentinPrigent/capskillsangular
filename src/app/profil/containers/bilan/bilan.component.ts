@@ -1,7 +1,10 @@
 import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { single } from './data';
 import { polar } from './polardata';
+
+import { User } from '../../../user';
 
 @Component({
   selector: 'skills-bilan',
@@ -13,6 +16,8 @@ export class BilanComponent implements OnInit {
   single: any[];
   polar: any[];
   multi: any[];
+
+  currentUser: User;
 
   view: any[] = [700, 400];
 
@@ -30,7 +35,8 @@ export class BilanComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-  constructor(private service: UsersService) {
+  constructor(private service: UsersService, private route: ActivatedRoute) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     Object.assign(this, {single});
     Object.assign(this, {polar});
    }
