@@ -14,7 +14,7 @@ const routes: Routes = [
   {path : 'TableauCompetenceComponent', component : TableauCompetenceComponent},
   {path : 'bilan', component : BilanComponent },
   {path : 'accueilreferent', component : TableaureferentComponent},
-  {path : 'recherchecoll', component : TableaurecherchecollComponent}
+  {path : 'recherchecoll', component : TableaurecherchecollComponent},
 
 ];
 
