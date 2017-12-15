@@ -25,9 +25,9 @@
       <th>Compétences</th>
       <th>Modifier</th>
     </tr>
-    <tr *ngFor='let skill of skills'>
-      <td>{{currentUser.firstname}}</td>
-      <td>{{currentUser.lastname}}</td>
+    <tr *ngFor='let skill of skills; let i = index'>
+      <td>{{skills[i].skillType.skillTypeName}}</td>
+      <td>{{skills[i].name}}</td>
       <td><span class="glyphicon glyphicon-pencil"></span></td>
     </tr>
   </table>

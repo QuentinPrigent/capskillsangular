@@ -12,7 +12,7 @@ import { User } from '../../../user';
 export class ProfilComponent implements OnInit {
 
   users: any;
-  skills: any;
+  skills: any = [];
   data: any;
 
   currentUser: User;
@@ -25,10 +25,13 @@ export class ProfilComponent implements OnInit {
     this.loadAllUsers();
 /*     this.dao.getUsers().subscribe((data: any) => this.users = data);
     this.data = this.route.snapshot.data; */
+
   }
 
   private loadAllUsers() {
     this.dao.getAll().subscribe(users => { this.users = users; });
+    this.skills = this.currentUser.skills;
+    console.log(this.skills);
   }
 
 
