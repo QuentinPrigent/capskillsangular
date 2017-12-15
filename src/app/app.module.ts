@@ -1,3 +1,4 @@
+import { TableaurecherchecollModule } from './tableaurecherchecoll/tableaurecherchecoll.module';
 import { AccueilreferentModule } from './accueilreferent/accueilreferent.module';
 import { NgModule } from '@angular/core';
 /*import of moduels*/
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpModule,
     HttpClientModule,
     TableauCompetenceModule,
-    AccueilreferentModule
+    AccueilreferentModule,
+    TableaurecherchecollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

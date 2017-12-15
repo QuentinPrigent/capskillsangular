@@ -1,3 +1,4 @@
+import { TableaurecherchecollComponent } from './tableaurecherchecoll/containers/tableaurecherchecoll/tableaurecherchecoll.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfilComponent } from './profil/containers/profil/profil.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path : 'profile', component : ProfilComponent},
   {path : 'TableauCompetenceComponent', component : TableauCompetenceComponent},
   {path : 'bilan', component : BilanComponent },
-  {path : 'accueilreferent', component : TableaureferentComponent}
+  {path : 'accueilreferent', component : TableaureferentComponent},
+  {path : 'recherchecoll', component : TableaurecherchecollComponent}
 
 ];
 
