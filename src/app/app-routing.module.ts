@@ -1,4 +1,3 @@
-import { SkillsComponent } from './tableau-competence/containers/skills/skills.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfilComponent } from './profil/containers/profil/profil.component';
@@ -10,7 +9,6 @@ const routes: Routes = [
   {path : 'login', component : LoginComponent},
   {path : 'profile', component : ProfilComponent},
   {path : 'TableauCompetenceComponent', component : TableauCompetenceComponent},
-  {path : 'skills', component : SkillsComponent},
 
 ];
 

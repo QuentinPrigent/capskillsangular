@@ -21,9 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     ProfilModule,
     HttpModule,
     HttpClientModule,
-    TableauCompetenceModule
+    TableauCompetenceModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent
 })
 export class AppModule { }

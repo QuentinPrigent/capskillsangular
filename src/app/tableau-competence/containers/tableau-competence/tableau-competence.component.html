@@ -3,94 +3,71 @@
    <span class = "space"></span>
    <div layout="row" layout-wrap>
      <br/> <br/>
-      <div flex="50"> <button mat-raised-button width="30" bgcolor="FFFFF">Deconnexion</button></div>
+      <div flex="50"> <button mat-raised-button width="30" bgcolor="FFFFF">Déconnexion</button></div>
       <br/>
-      <div flex="50" margin-top="20px"><button mat-raised-button>Referent profil</button> </div>
+      <div flex="50" margin-top="20px"><button mat-raised-button>Profil Référent</button> </div>
    </div>
   </mat-toolbar>
 <div class = 'logimage'>
 <img src='image' src = './assets/img/user.png' height="50px" width="50px">collaborateur@capgemini.com
 </div>
-<html>
-    <head>
-    <style> 
-    input[type=text] {
-        width: 130px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background-color: white;
-        background-image: url('searchicon.png');
-        background-position: 10px 10px; 
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
-        -webkit-transition: width 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out;
-        float: 750 right;
-    }
-    
-    input[type=text]:focus {
-        width: 100%;
-    }
-    </style>
-    </head>
-    <body>
-    
-    <form>
-      <input type="text" name="search" placeholder="Search..">
-    </form>
-    
-    </body>
-    </html>
-    
 <fieldset class="fieldsetSection">
-    <legend>Collaborator Skills Board</legend>
-<div class="section mat-elevation-z8" >
+    <legend>Tableau des compétences</legend>
+   
 
+      <div style="padding-left: 67%;">
+      <form class="form-search form-inline">
+          <input type="text" class="search-query"  (keyup)="applyFilter($event.target.value)"  placeholder="Search..." />
+     </form>
+    </div>
+<div class="section mat-elevation-z8" >
+    
+    
 
     <mat-table #table [dataSource]="dataSource" matSort >
        
         <!-- Categories Column -->
         <ng-container matColumnDef="skillType">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Skill Type </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.skillType}} </mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Catégorie </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.skillTypeName}} </mat-cell>
         </ng-container>
     
         <!-- skill Column -->
         <ng-container matColumnDef="skill">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Skill </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.skill}} </mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Compétences </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.skillName}} </mat-cell>
         </ng-container>
     
         <!-- Actual Level Column -->
         <ng-container matColumnDef="actualGrade">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Actual Grade</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Niveau Actuel</mat-header-cell>
           <mat-cell *matCellDef="let element"> 
           <star-rating-comp [starType]="'svg'" [rating]=element.actualGrade [readOnly]="true"></star-rating-comp>
     </mat-cell>
         </ng-container>
     
+        
         <!-- grade-target Column -->
-        <ng-container matColumnDef="targetGrade">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Grade Target</mat-header-cell>
+        <ng-container matColumnDef="targetGrade"  >
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Niveau ciblé</mat-header-cell>
           <mat-cell *matCellDef="let element"> 
+
     <star-rating-comp [starType]="'svg'" [rating]=element.targetGrade [readOnly]="true"></star-rating-comp>
            </mat-cell>
         </ng-container>
     
          <!-- grade-objectif Column -->
         <ng-container matColumnDef="collaboratorGrade">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Collaborator Grade </mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Niveau Collaborateur </mat-header-cell>
           <mat-cell *matCellDef="let element"> 
-    <star-rating-comp [starType]="'svg'" [rating]=element.collaboratorGrade [readOnly]="true"></star-rating-comp>
+    <star-rating-comp ng-if="element.collaboratorGrade" [starType]="'svg'" [rating]=element.collaboratorGrade [readOnly]="true"></star-rating-comp>
     </mat-cell>
      
         </ng-container>
     
          <!-- Modify Column -->
         <ng-container matColumnDef="modify">
-          <mat-header-cell *matHeaderCellDef mat-sort-header> Modify</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Modifier</mat-header-cell>
         <mat-cell *matCellDef="let element ;let i=index;"> 
            <a (click)="openTableauCompetenceUpdate(element,i)"><img src="../assets/img/modify.png" height="30px" width="30px" > </a> 
         </mat-cell>
@@ -100,7 +77,16 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
       </mat-table>
       <br/>
-      <button mat-raised-button style="float: right; padding-top:5px;">Voir Bilan</button>
+ <!--  <mat-card>
+          <button mat-raised-button (click)="openTableauCompetenceAdd()">Add grading</button>
+          <button mat-raised-button  >Voir Bilan</button>
+        </mat-card>
+      -->
+        <div mat-dialog-actions>
+            <button mat-raised-button (click)="openTableauCompetenceAdd()">Ajouter un niveau</button>
+           <button mat-raised-button style=" margin-left:450px;" >Voir Bilan</button>
+        </div>
+      
    <!-- <button mat-raised-button [routerLink]="['/skills/add']">Add new Skill</button>-->
     </div>
   </fieldset>

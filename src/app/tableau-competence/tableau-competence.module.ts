@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule, MatTableModule, MatCardModule, MatIconModule, MatInputModule,
   MatDialogModule, MatButtonModule } from '@angular/material';
+  import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
@@ -13,8 +14,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { StarRatingModule } from 'angular-star-rating';
 import {OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent} from 'angular-star-rating';
 import {HttpModule} from '@angular/http';
-import { SkillsComponent, SkillsDiaologComponent } from './containers/skills/skills.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TableauCompetenceService } from './tableau-competence.service';
 
 
 @NgModule({
@@ -35,9 +36,12 @@ import { SkillsComponent, SkillsDiaologComponent } from './containers/skills/ski
     MatDialogModule,
     StarRatingModule.forRoot(),
     MatToolbarModule,
+    HttpClientModule,
+    MatSelectModule
   ],
+  providers : [TableauCompetenceService],
   exports: [ TableauCompetenceComponent ],
-  declarations: [TableauCompetenceComponent, TableauCompetenceUpdateComponent, SkillsComponent, SkillsDiaologComponent],
-  entryComponents: [TableauCompetenceUpdateComponent, SkillsDiaologComponent]
+  declarations: [TableauCompetenceComponent, TableauCompetenceUpdateComponent],
+  entryComponents: [TableauCompetenceUpdateComponent]
 })
 export class TableauCompetenceModule { }
