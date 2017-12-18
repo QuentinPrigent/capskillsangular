@@ -20,7 +20,7 @@ export class BilanComponent implements OnInit {
   showXAxis = true;
   showYAxis = true;
   gradient = false;
-  showLegend = true;
+  showLegend = false;
   showXAxisLabel = true;
   xAxisLabel = 'Country';
   showYAxisLabel = true;
@@ -39,19 +39,5 @@ export class BilanComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getUsers().subscribe( (data) => this.users = data );
   }
-
-/*   addUser() {
-
-        const params = {
-          'firstname':	'pierre',
-          'lastname':	'ned',
-          'email'	: 'pierre.ned@capgemini.com',
-          'password'	 : 'jaimebnpparibas'
-        };
-        // console.log(params);
-        this.service.addUser(params).subscribe((data) => console.log(data));
-      }
- */
 }

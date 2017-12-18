@@ -12,7 +12,7 @@ export let single = [
       'value': 7200000
     }
   ];
-  
+
   export let multi = [
     {
       'name': 'Germany',
@@ -27,7 +27,7 @@ export let single = [
         }
       ]
     },
-  
+
     {
       'name': 'USA',
       'series': [
