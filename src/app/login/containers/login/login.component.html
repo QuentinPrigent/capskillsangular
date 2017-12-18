@@ -5,30 +5,29 @@
 </mat-toolbar>
 
 <br>
- 
 
 <div class = "connexion">
 
 <div class="login">
 
     <mat-form-field>
-      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <input matInput placeholder="Entrez votre email" [formControl]="email" required/>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   </div> 
 
   <div class="password">
       <mat-form-field>
-        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Entrez votre mot de passe" [type]="hide ? 'password' : 'text'" [formControl]="password" required/>
         <!--  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>  -->
       </mat-form-field>
   </div>
 
+  <br>
 
   <div class="button-row">
-    <button mat-raised-button [routerLink]="['/profil']">Connexion</button>
+    <button mat-raised-button (click)="login($event)">Connexion</button>
   </div>
 
 
 </div>
-

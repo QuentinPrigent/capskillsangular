@@ -5,11 +5,12 @@
   <div layout="row" layout-wrap>
      <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
        <br/>
-     <div><button mat-raised-button>Profil Référent</button> </div>
+     <div><button mat-raised-button (click)="referent($event)">Profil Référent</button> </div>
   </div>
 </mat-toolbar>
 <div class = 'logimage'>
-  <img src='image' src = './assets/img/user.png' height="50px" width="50px">collaborateur@capgemini.com
+  <img src='image' src = './assets/img/user.png' height="50px" width="50px">
+  {{currentUser.email}}
 </div>
 <!-- *************************************************************** -->
  
@@ -22,10 +23,12 @@
     <tr class="table-header">
       <th>Catégories</th>
       <th>Compétences</th>
+      <th>Modifier</th>
     </tr>
-    <tr *ngFor='let skill of skills'>
-      <td>{{skill.skillType.skillTypeName}}</td>
-      <td>{{skill.name}}</td>
+    <tr *ngFor='let skill of skills; let i = index'>
+      <td>{{skills[i].skillType.skillTypeName}}</td>
+      <td>{{skills[i].name}}</td>
+      <td><span class="glyphicon glyphicon-pencil"></span></td>
     </tr>
   </table>
 </div>

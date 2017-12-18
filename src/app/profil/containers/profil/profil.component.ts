@@ -1,7 +1,9 @@
-import { UsersService } from './../../Services/users.service';
+import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
 import {single} from './data';
 import {polar} from './polardata';
+import { ActivatedRoute } from '@angular/router';
+import { User } from '../../../user';
 
 @Component({
   selector: 'skills-profil',
@@ -12,47 +14,31 @@ export class ProfilComponent implements OnInit {
 
 
   users: any;
-  skills: any;
+  skills: any = [];
+  data: any;
 
-  constructor(private dao: UsersService) {
+  currentUser: User;
+
+  referent(event) {
+    if (this.currentUser.referent === true) {
+      window.location.href = '/tabconscomp';
+    }else{
+      alert('Vous n\'êtes pas référent');
+    }
+  }
+
+  constructor(private dao: UsersService, private route: ActivatedRoute) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   ngOnInit() {
-    this.dao.getUsers().subscribe((data: any) => this.users = data);
-    this.dao.getSkills().subscribe((dataskills: any) => this.skills = dataskills);
-    }
+    this.loadAllUsers();
+  }
 
+  private loadAllUsers() {
+    this.dao.getAll().subscribe(users => { this.users = users; });
+    this.skills = this.currentUser.skills;
+    console.log(this.skills);
+  }
 
-/*   this.dao.getUsers()
-  .subscribe(
-    data => data.forEach(elt => this.users = data),
-    err => console.error(`Erreur: `, err)
-  ); */
-
-/*   this.dao.getUsers()
-    .subscribe(
-      data => data.forEach(elt => console.log(elt)),
-      err => console.error(`Erreur: `, err)
-    ); */
-
-/*     this.dao.getUsers()
-      .subscribe(
-        function (data) {
-          data.forEach(function (elt) {
-            console.log(elt);
-          });
-        },
-        err => console.error(`Erreur: `, err)
-      );
-  } */
-
-/*   addUser() {
-    const params = {
-      'firstname':	'pierre',
-      'lastname':	'ned',
-      'email': 'pierre.ned@capgemini.com',
-      'password': 'jaimebnpparibas'
-    }; */
-        // console.log(params);
-        // this.service.addUser(params).subscribe((data) => console.log(data));
-      }
+}
