@@ -5,7 +5,7 @@ import { User } from './user';
 
 @Injectable()
 export class UsersService {
-  root = 'http://localhost:3306/users/';
+  root = 'http://localhost:1214/users/';
 
   constructor(public http: HttpClient) { }
 
@@ -25,11 +25,11 @@ export class UsersService {
   }
 
   getAll() {
-    return this.http.get<User[]>('http://localhost:3306/users/');
+    return this.http.get<User[]>('http://localhost:1214/users/');
   }
 
   getById(id: number) {
-    return this.http.get('http://localhost:3306/users/' + id);
+    return this.http.get('http://localhost:1214/users/' + id);
   }
 
   getUsers() {

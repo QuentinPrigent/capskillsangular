@@ -27,6 +27,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(event) {
+    console.log(this.email.value);
+    console.log(this.password.value);
     if (this.email.valid && this.password.valid) {
       this.dao.login(this.email.value, this.password.value).subscribe(
         data => (console.log(data), window.location.href = './profil', localStorage.setItem
