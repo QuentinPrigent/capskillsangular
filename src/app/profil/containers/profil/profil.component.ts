@@ -17,6 +17,14 @@ export class ProfilComponent implements OnInit {
 
   currentUser: User;
 
+  referent(event) {
+    if (this.currentUser.referent === true) {
+      window.location.href = '/tabconscomp';
+    }else{
+      alert("Vous n'êtes pas référent");
+    }
+  }
+
   constructor(private dao: UsersService, private route: ActivatedRoute) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }

@@ -5,7 +5,7 @@
   <div layout="row" layout-wrap>
      <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
        <br/>
-     <div><button mat-raised-button routerLink='/tabconscomp'>Profil Référent</button> </div>
+     <div><button mat-raised-button (click)="referent($event)">Profil Référent</button> </div>
   </div>
 </mat-toolbar>
 <div class = 'logimage'>
