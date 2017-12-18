@@ -10,11 +10,17 @@
         <span>Deconnexion </span>
       </button>
     </a>
-    
-    <button class="button2">
-      <span>Mode Collaborateur </span>
-    </button>
+    <a href="profil" routerLink="/">   
+      <button class="button2">
+        <span>Mode Collaborateur </span>
+      </button>
+    </a>
   </div>
+</div>
+
+<div class = 'logimage'>
+  <img src='image' src = './assets/img/user.png' height="50px" width="50px">
+  {{currentUser.email}}
 </div>
 
 <!--  TABLEAU REFERENT -->
@@ -138,7 +144,9 @@
         
         <div class="modal-footer">
           <br>
+          <a href="recherchercoll" routerLink="/">  
           <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
+          </a>
         </div>
       </div>
 
