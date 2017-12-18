@@ -6,6 +6,7 @@ export class UsersService {
 
   constructor(public http: HttpClient) { }
 
+<<<<<<< HEAD
   getUsers() {
     return this.http.get('http://localhost:1214/users/');
   }
@@ -15,6 +16,13 @@ export class UsersService {
   }
 
   addUser(params) {
+=======
+  getUsers(){
+    return this.http.get('http://localhost:1214/users/' );
+  }
+  addUser(params){
+
+>>>>>>> cecile
     // tslint:disable-next-line:max-line-length
     return this.http.post(`http://localhost:1214/users/?firstname=sdwsdds&lastname=sdwsd&email=sddsd.taberly@capgemini.com&password=jaimelesbokits`, null );
   }

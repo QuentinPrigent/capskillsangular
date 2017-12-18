@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- ********************     HEADER HTML   ************************ -->
 <mat-toolbar class='header'> 
   <span> <img class="image-header" src='./assets/img/logocapskills.jpg'></span>
@@ -31,3 +32,47 @@
 </div>
 
 <button mat-raised-button routerLink='/bilan'>Bilan</button>
+=======
+<p>
+  profil works!
+</p>
+<div *ngFor='let user of users'>
+<h5> {{user.email }} </h5>
+</div>
+
+
+<button routerLink='/login'>Déco</button>
+
+<button (click)='addUser()'>Ajouter</button>
+
+<ngx-charts-bar-vertical
+[view]="view"
+[scheme]="colorScheme"
+[results]="single"
+[gradient]="gradient"
+[xAxis]="showXAxis"
+[yAxis]="showYAxis"
+[legend]="showLegend"
+[showXAxisLabel]="showXAxisLabel"
+[showYAxisLabel]="showYAxisLabel"
+[xAxisLabel]="xAxisLabel"
+[yAxisLabel]="yAxisLabel"
+(select)="onSelect($event)">
+</ngx-charts-bar-vertical>
+
+
+<ngx-charts-polar-chart
+[view]="view"
+[scheme]="colorScheme"
+[results]="polar"
+[gradient]="gradient"
+[xAxis]="showXAxis"
+[yAxis]="showYAxis"
+[legend]="showLegend"
+[showXAxisLabel]="showXAxisLabel"
+[showYAxisLabel]="showYAxisLabel"
+[xAxisLabel]="xAxisLabel"
+[yAxisLabel]="yAxisLabel"
+(select)="onSelect($event)">
+</ngx-charts-polar-chart>
+>>>>>>> cecile

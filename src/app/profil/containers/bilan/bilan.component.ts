@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import { UsersService } from './../../Services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { single } from './data';
 import { polar } from './polardata';
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> cecile
 
 @Component({
   selector: 'skills-bilan',
@@ -9,6 +13,7 @@ import { polar } from './polardata';
   styleUrls: ['./bilan.component.css']
 })
 export class BilanComponent implements OnInit {
+<<<<<<< HEAD
   users: any;
   single: any[];
   polar: any[];
@@ -40,4 +45,12 @@ export class BilanComponent implements OnInit {
 
   ngOnInit() {
   }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> cecile
 }
