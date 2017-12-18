@@ -24,6 +24,7 @@
     display: block;
     -webkit-text-fill-color: white;
     width: 130px;
+    margin-left: 15px;
 }
 
 .mat-dialog-title{
