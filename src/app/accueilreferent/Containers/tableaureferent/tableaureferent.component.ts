@@ -1,4 +1,6 @@
+import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../user';
 
 @Component({
   selector: 'skills-tableaureferent',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableaureferentComponent implements OnInit {
 
-  constructor() { }
+currentUser: User;
+
+  constructor() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
   ngOnInit() {
   }
