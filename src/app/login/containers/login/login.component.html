@@ -5,10 +5,12 @@
 </mat-toolbar>
 
 <br>
+ 
 
 <div class = "connexion">
 
-  <div class="login">
+<div class="login">
+
     <mat-form-field>
       <input matInput placeholder="Enter your email" [formControl]="email" required>
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -26,6 +28,7 @@
   <div class="button-row">
     <button mat-raised-button [routerLink]="['/profil']">Connexion</button>
   </div>
+
 
 </div>
 

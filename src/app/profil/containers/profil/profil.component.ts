@@ -1,5 +1,7 @@
 import { UsersService } from './../../Services/users.service';
 import { Component, OnInit } from '@angular/core';
+import {single} from './data';
+import {polar} from './polardata';
 
 @Component({
   selector: 'skills-profil',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
+
 
   users: any;
   skills: any;
@@ -53,4 +56,3 @@ export class ProfilComponent implements OnInit {
         // console.log(params);
         // this.service.addUser(params).subscribe((data) => console.log(data));
       }
-

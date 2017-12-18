@@ -1,6 +1,8 @@
+
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+
 import { UsersService } from './Services/users.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { MatToolbarModule } from '@angular/material';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +25,7 @@ import { MatToolbarModule } from '@angular/material';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule
+
   ],
   providers : [UsersService],
   declarations: [ProfilComponent, BilanComponent],

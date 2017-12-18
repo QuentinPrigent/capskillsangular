@@ -1,6 +1,7 @@
 import { TableaurecherchecollModule } from './tableaurecherchecoll/tableaurecherchecoll.module';
 import { AccueilreferentModule } from './accueilreferent/accueilreferent.module';
 import { NgModule } from '@angular/core';
+
 /*import of modules*/
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
@@ -13,8 +14,8 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { TabconscompModule } from './tabconscomp/tabconscomp.module';
 
-
-
+/*import of modules*/
+import { TableauCompetenceModule } from './tableau-competence/tableau-competence.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { TabconscompModule } from './tabconscomp/tabconscomp.module';
     HttpClientModule,
     AccueilreferentModule,
     TableaurecherchecollModule,
-
+    TableauCompetenceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

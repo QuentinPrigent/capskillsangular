@@ -3,12 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { single } from './data';
 import { polar } from './polardata';
 
+
 @Component({
   selector: 'skills-bilan',
   templateUrl: './bilan.component.html',
   styleUrls: ['./bilan.component.css']
 })
 export class BilanComponent implements OnInit {
+
   users: any;
   single: any[];
   polar: any[];
@@ -40,4 +42,5 @@ export class BilanComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }
