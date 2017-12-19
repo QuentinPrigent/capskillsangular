@@ -3,7 +3,7 @@
    <span class = "space"></span>
    <div layout="row" layout-wrap>
      <br/> <br/>
-      <div flex="50"> <button mat-raised-button width="30" bgcolor="FFFFF">Déconnexion</button></div>
+      <div flex="50"> <button (click)='logout($event)' mat-raised-button width="30" bgcolor="FFFFF">Déconnexion</button></div>
       <br/>
       <div flex="50" margin-top="20px"><button mat-raised-button (click)="referent($event)">Profil Référent</button> </div>
    </div>
@@ -86,7 +86,7 @@
       -->
         <div mat-dialog-actions>
             <button mat-raised-button (click)="openTableauCompetenceAdd()">Ajouter un niveau</button>
-           <button mat-raised-button style=" margin-left:450px;" >Voir Bilan</button>
+           <button mat-raised-button style=" margin-left:450px;" (click) = 'bilan($event)' >Voir Bilan</button>
         </div>
       
    <!-- <button mat-raised-button [routerLink]="['/skills/add']">Add new Skill</button>-->
