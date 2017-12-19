@@ -22,8 +22,16 @@ export class ProfilComponent implements OnInit {
   referent(event) {
     if (this.currentUser.referent === true) {
       window.location.href = '/accueilreferent';
+<<<<<<< HEAD
     }else {
 
+=======
+<<<<<<< HEAD
+    }else {
+=======
+    }else{
+>>>>>>> 3ed922d9952c1b4def9b5f63e6f231a332334a9a
+>>>>>>> quentin
       alert('Vous n\'êtes pas référent');
     }
   }
