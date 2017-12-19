@@ -36,6 +36,8 @@ constructor(public service: TableauCompetenceService, public dialog: MatDialog) 
 action: string;
 
   logout($event) {
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
     window.location.href = './login';
   }
 
