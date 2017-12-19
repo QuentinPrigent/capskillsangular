@@ -17,8 +17,13 @@ export class TableauCompetenceService {
     let response = await this.http.get('http://localhost:1214/grading/').toPromise();
     return response;
   }
-  getSkills(skillTypeId: string) {
-    return this.http.get('http://localhost:1214/skills/display/' + skillTypeId);
+
+  async getUserGradings(userId:number): Promise<any> {
+    let response = await this.http.get('http://localhost:1214/grading/users/'+userId).toPromise();
+    return response;
+  }
+  getSkills(skillTypeId:string){
+    return this.http.get('http://localhost:1214/skills/display/'+skillTypeId);
   }
 
   postGrading(grading: any) {
