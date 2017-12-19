@@ -36,6 +36,10 @@ export class BilanComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
+  retourProfil($event) {
+    window.location.href = './TableauCompetenceComponent';
+  }
+
   constructor(private service: UsersService, private route: ActivatedRoute) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     Object.assign(this, {single});
