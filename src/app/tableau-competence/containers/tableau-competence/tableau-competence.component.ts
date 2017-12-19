@@ -95,7 +95,7 @@ action:string;
    const dialogRef = this.dialog.open(TableauCompetenceUpdateComponent , {height: '250px', width: '350px', data: 
     {gradingId:elt.gradingId,skillTypeId:elt.skillTypeId, skillTypeName: elt.skillTypeName, skillId:elt.skillId,skillName: elt.skillName,
       actualGrade: elt.actualGrade, targetGrade: elt.targetGrade, collaboratorGrade: elt.collaboratorGrade,userId:elt.userId 
-      ,title:"update...",action:'update' }});
+      ,title:"Modifier",action:'update' }});
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
         console.log('The dialog was closed', result);
