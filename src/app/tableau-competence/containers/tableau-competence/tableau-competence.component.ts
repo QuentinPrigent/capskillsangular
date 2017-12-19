@@ -38,7 +38,7 @@ action:string;
     // sont affecter à la variable gradings (this.gradings)
     //this.service.getGradings();
     //.then( (data) => { this.gradings = data;   console.log(data)} );
-    this.getGradings();
+    this.getUserGradings(this.userId);
   }
 
   applyFilter(filterValue: string) {
@@ -50,10 +50,10 @@ action:string;
   }
 
 
-  async getGradings(){
+  async getUserGradings(userId:number){
     //on recupère les grading de la base de données de manière asynchrone 
     //(on attend le retour de la reponse) avant d'éffectuer tout autre action ) 
-    let response= await this.service.getGradings();
+    let response= await this.service.getUserGradings(userId);
     //on parcour les infos récupérées de la table grading puis on extrait que les infos necessaires 
     //pour les colonnes du tableau. A la fin,du parcour ELEMENT_DATA, contient les lignes du tableau
     //ce qui actualise le tableau  
@@ -103,13 +103,6 @@ action:string;
         this.grading=elt;
         this.service.updadteGrading(this.grading).subscribe();
         
-        //ELEMENT_DATA[row] = this.grading;
-        /*this.getGradings();
-        this.dataSource = new MatTableDataSource(ELEMENT_DATA); */
-        
-       
-        //this.dataSource.filter=this.search;
-        
       }
     });
   }
@@ -137,10 +130,6 @@ action:string;
          this.dataSource=new MatTableDataSource(ELEMENT_DATA) ;
          console.log(this.grading);
         } );
-       
-       
-        
-        //this.dataSource=new MatTableDataSource(ELEMENT_DATA) ;
         
       }
     });
@@ -217,13 +206,5 @@ export interface Element {
   }
 
  
-let ELEMENT_DATA: Element[] = [
-  /*{skillType: 'Langage', skill: 'J2EE',  actualGrade: 2, targetGrade: 3, collaboratorGrade: 4},
-      {skillType: 'Software', skill: 'Angular',  actualGrade: 2, targetGrade: 3, collaboratorGrade: 4},
-    {skillType: 'Software', skill: 'PHP',  actualGrade: 1, targetGrade: 2, collaboratorGrade: 3},
-    {skillType: 'hardware', skill: 'Network',  actualGrade: 1, targetGrade: 2, collaboratorGrade: 2},
-    {skillType: 'Management', skill: 'Agile methode',  actualGrade: 1, targetGrade: 3, collaboratorGrade: 4},
-    {skillType: 'Management', skill: 'Project management',  actualGrade: 1, targetGrade: 1, collaboratorGrade: 3}
-*/
-  ];
+let ELEMENT_DATA: Element[] = [ ];
 
