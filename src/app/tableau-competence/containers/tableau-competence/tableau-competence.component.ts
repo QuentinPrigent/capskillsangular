@@ -24,10 +24,13 @@ dataSource = new MatTableDataSource(ELEMENT_DATA);
 grading: Element;
 gradings: any;
 search: any;
-
+userId: number;
 currentUser: User;
 
-userId = 15;
+constructor(public service: TableauCompetenceService, public dialog: MatDialog) {
+  this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  this.userId = this.currentUser.id;
+ }
 
 @ViewChild(MatSort) sort: MatSort;
 action: string;
@@ -48,20 +51,10 @@ action: string;
     window.location.href = './bilan';
   }
 
-  constructor(public service: TableauCompetenceService, public dialog: MatDialog) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-   }
-
  ngOnInit() {
-    // appel du service de récupérations des infos de la table grading. les informations retournées.
-    // sont affecter à la variable gradings (this.gradings)
-    // this.service.getGradings();
-    // .then( (data) => { this.gradings = data;   console.log(data)} );
     this.getUserGradings(this.userId);
 /*     this.getGradings(); */
   }
-
-
 
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
@@ -69,7 +62,6 @@ action: string;
     this.search = filterValue;
     this.dataSource.filter = filterValue;
   }
-
 
   async getUserGradings(userId: number) {
     // on recupère les grading de la base de données de manière asynchrone
@@ -90,30 +82,19 @@ action: string;
   }
 
 
-
-
-
-/********************************************************** */
   async postGrading (grading: any) {
-    // on recupère les grading de la base de données de manière asynchrone
     // (on attend le retour de la reponse) avant d'éffectuer tout autre action )
     let response = await this.service.postGrading(grading);
 
    console.log(response);
-    /* ELEMENT_DATA[ELEMENT_DATA.length]={ gradingId:response.gradingId,skillTypeId: response.skillId,
-      skillTypeName: response.skillTypeName, skillId: entry.skill.id,skillName: entry.skill.name,
-      actualGrade: entry.actualgrade, targetGrade: entry.targetgrade, collaboratorGrade: entry.collaboratorgrade,userId:this.userId };
-     */
      this.dataSource = new MatTableDataSource(ELEMENT_DATA) ;
   }
-  /**
+
   /**
    * Set the sort after the view init since this component will
    * be able to query its view for the initialized sort.
    */
   sngAfterViewInit() {
-
-  // console.log(this.gradings);
       this.dataSource.sort = this.sort;
   }
 // utiliser pour modifier les grading lors de l'appui sur les crayons
@@ -135,7 +116,6 @@ action: string;
     });
   }
 
-  // lorque l'on clique sur le bouton add grading
   openTableauCompetenceAdd(): void {
  // on affiche le formulaire popup d'enregistrement de grading
     const dialogRef = this.dialog.open(TableauCompetenceUpdateComponent , {height: '350px', width: '350px', data:
@@ -232,4 +212,3 @@ export interface Element {
 
 
 let ELEMENT_DATA: Element[] = [ ];
-

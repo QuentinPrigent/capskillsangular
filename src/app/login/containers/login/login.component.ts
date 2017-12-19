@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(event) {
-    console.log(this.email.value);
-    console.log(this.password.value);
     if (this.email.valid && this.password.valid) {
       this.dao.login(this.email.value, this.password.value).subscribe(
-        data => (window.location.href = './TableauCompetenceComponent', localStorage.setItem
-                ('currentUser', JSON.stringify(data))),
+        data => {
+          localStorage.setItem('currentUser', JSON.stringify(data));
+          window.location.href = './TableauCompetenceComponent';
+        },
         error => console.error(error.status)
       );
     } else {
