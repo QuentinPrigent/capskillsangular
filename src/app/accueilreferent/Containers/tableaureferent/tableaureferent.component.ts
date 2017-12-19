@@ -16,6 +16,7 @@ currentUser: User;
   }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
 }

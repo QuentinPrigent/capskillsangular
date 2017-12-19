@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {MatTableDataSource, MatSort} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
@@ -8,6 +7,7 @@ import {MatDialog, MatDialogClose, MatDialogRef, MAT_DIALOG_DATA, MatToolbarModu
 import {OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent} from 'angular-star-rating';
 import { TableauCompetenceService } from '../../tableau-competence.service';
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import { User } from '../../../user';
 
 @Component({
   selector: 'skills-tableau-competence',
@@ -16,68 +16,82 @@ import { jsonpCallbackContext } from '@angular/common/http/src/module';
   encapsulation: ViewEncapsulation.None
 })
 export class TableauCompetenceComponent implements OnInit {
-  //déclarration de variables
-  //displayedColumns pour les colonne du tableau
-displayedColumns = ['skillType', 'skill', 'actualGrade', 'targetGrade', 'collaboratorGrade', 'modify'];
-// datasource contient les infos du tableau
-dataSource = new MatTableDataSource(ELEMENT_DATA);
-grading:Element;
-gradings:any;
-search:any;
-userId=15
+  // déclarration de variables
+  // displayedColumns pour les colonne du tableau
+  displayedColumns = ['skillType', 'skill', 'actualGrade', 'targetGrade', 'collaboratorGrade', 'modify'];
+  // datasource contient les infos du tableau
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  grading: Element;
+  gradings: any;
+  search: any;
+  currentUser: User;
+  userId = 8;
 
-@ViewChild(MatSort) sort: MatSort;
-action:string;
+  @ViewChild(MatSort) sort: MatSort;
+  action: string;
 
-  constructor(public service: TableauCompetenceService,public dialog: MatDialog) { 
-    
-     }
-
- ngOnInit() {
-    //appel du service de récupérations des infos de la table grading. les informations retournées.
-    // sont affecter à la variable gradings (this.gradings)
-    //this.service.getGradings();
-    //.then( (data) => { this.gradings = data;   console.log(data)} );
-    this.getGradings();
+  referent(event) {
+    if (this.currentUser.referent === true) {
+      window.location.href = '/accueilreferent';
+    }else {
+      alert('Vous n\'êtes pas référent');
+    }
   }
 
+  constructor(public service: TableauCompetenceService, public dialog: MatDialog) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      }
+
+  ngOnInit() {
+      // appel du service de récupérations des infos de la table grading. les informations retournées.
+      // sont affecter à la variable gradings (this.gradings)
+      // this.service.getGradings();
+      // .then( (data) => { this.gradings = data;   console.log(data)} );
+      this.getGradings();
+    }
+
   applyFilter(filterValue: string) {
-   
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
-    this.search=filterValue;
+    this.search = filterValue;
     this.dataSource.filter = filterValue;
   }
 
 
-  async getGradings(){
-    //on recupère les grading de la base de données de manière asynchrone 
-    //(on attend le retour de la reponse) avant d'éffectuer tout autre action ) 
-    let response= await this.service.getGradings();
-    //on parcour les infos récupérées de la table grading puis on extrait que les infos necessaires 
-    //pour les colonnes du tableau. A la fin,du parcour ELEMENT_DATA, contient les lignes du tableau
-    //ce qui actualise le tableau  
+  async getGradings() {
+    // on recupère les grading de la base de données de manière asynchrone
+    // (on attend le retour de la reponse) avant d'éffectuer tout autre action )
+    let response = await this.service.getGradings();
+    // on parcour les infos récupérées de la table grading puis on extrait que les infos necessaires
+    // pour les colonnes du tableau. A la fin,du parcour ELEMENT_DATA, contient les lignes du tableau
+    // ce qui actualise le tableau
     console.log(response);
-    let i=0;
+    let i = 0;
     for (let entry of response) {
-      ELEMENT_DATA[i]={ gradingId:entry.id,skillTypeId: entry.skill.skillType.id, skillTypeName: entry.skill.skillType.skillTypeName, skillId: entry.skill.id,skillName: entry.skill.name,
-        actualGrade: entry.actualgrade, targetGrade: entry.targetgrade, collaboratorGrade: entry.collaboratorgrade,userId:this.userId };
-       i=i+1;
+      ELEMENT_DATA[i] = {gradingId: entry.id, skillTypeId: entry.skill.skillType.id,
+        skillTypeName: entry.skill.skillType.skillTypeName, skillId: entry.skill.id, skillName: entry.skill.name,
+        actualGrade: entry.actualgrade, targetGrade: entry.targetgrade, collaboratorGrade: entry.collaboratorgrade, userId: this.userId };
+        i = i + 1;
      }
-     this.dataSource=new MatTableDataSource(ELEMENT_DATA) ;
-     
+     this.dataSource = new MatTableDataSource(ELEMENT_DATA) ;
   }
 
-  async postGrading(grading:any){
-    //on recupère les grading de la base de données de manière asynchrone 
-    //(on attend le retour de la reponse) avant d'éffectuer tout autre action ) 
-    let response= await this.service.postGrading(grading);
-    
+
+
+
+
+/********************************************************** */
+  async postGrading (grading: any) {
+    // on recupère les grading de la base de données de manière asynchrone
+    // (on attend le retour de la reponse) avant d'éffectuer tout autre action ) 
+    let response = await this.service.postGrading(grading);
+
    console.log(response);
-    /*  ELEMENT_DATA[ELEMENT_DATA.length]={ gradingId:response.gradingId,skillTypeId: response.skillId, skillTypeName: response.skillTypeName, skillId: entry.skill.id,skillName: entry.skill.name,
-        actualGrade: entry.actualgrade, targetGrade: entry.targetgrade, collaboratorGrade: entry.collaboratorgrade,userId:this.userId };
+    /* ELEMENT_DATA[ELEMENT_DATA.length]={ gradingId:response.gradingId,skillTypeId: response.skillId, 
+      skillTypeName: response.skillTypeName, skillId: entry.skill.id,skillName: entry.skill.name,
+      actualGrade: entry.actualgrade, targetGrade: entry.targetgrade, collaboratorGrade: entry.collaboratorgrade,userId:this.userId };
      */
-     this.dataSource=new MatTableDataSource(ELEMENT_DATA) ;
+     this.dataSource = new MatTableDataSource(ELEMENT_DATA) ;
   }
   /**
   /**
@@ -86,10 +100,10 @@ action:string;
    */
   sngAfterViewInit() {
 
-    //console.log(this.gradings);
+  // console.log(this.gradings);
       this.dataSource.sort = this.sort;
   }
-//utiliser pour modifier les grading lors de l'appui sur les crayons
+// utiliser pour modifier les grading lors de l'appui sur les crayons
  openTableauCompetenceUpdate(elt: Element, row: number): void {
     console.log('ligne :'+row);
    const dialogRef = this.dialog.open(TableauCompetenceUpdateComponent , {height: '250px', width: '350px', data: 
