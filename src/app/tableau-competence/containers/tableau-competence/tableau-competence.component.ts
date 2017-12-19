@@ -16,28 +16,6 @@ import { User } from '../../../user';
   encapsulation: ViewEncapsulation.None
 })
 export class TableauCompetenceComponent implements OnInit {
-<<<<<<< HEAD
-  // déclarration de variables
-  // displayedColumns pour les colonne du tableau
-  displayedColumns = ['skillType', 'skill', 'actualGrade', 'targetGrade', 'collaboratorGrade', 'modify'];
-  // datasource contient les infos du tableau
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  grading: Element;
-  gradings: any;
-  search: any;
-  currentUser: User;
-  userId = 8;
-
-  @ViewChild(MatSort) sort: MatSort;
-  action: string;
-
-  referent(event) {
-    if (this.currentUser.referent === true) {
-      window.location.href = '/accueilreferent';
-    }else {
-      alert('Vous n\'êtes pas référent');
-    }
-=======
   //déclarration de variables
   //displayedColumns pour les colonne du tableau
 displayedColumns = ['skillType', 'skill', 'actualGrade', 'targetGrade', 'collaboratorGrade', 'modify'];
@@ -61,7 +39,6 @@ action:string;
     //this.service.getGradings();
     //.then( (data) => { this.gradings = data;   console.log(data)} );
     this.getUserGradings(this.userId);
->>>>>>> f93bd88f137d2f79abd26beacd59f944571e0bbc
   }
 
   constructor(public service: TableauCompetenceService, public dialog: MatDialog) {
@@ -84,15 +61,6 @@ action:string;
   }
 
 
-<<<<<<< HEAD
-  async getGradings() {
-    // on recupère les grading de la base de données de manière asynchrone
-    // (on attend le retour de la reponse) avant d'éffectuer tout autre action )
-    let response = await this.service.getGradings();
-    // on parcour les infos récupérées de la table grading puis on extrait que les infos necessaires
-    // pour les colonnes du tableau. A la fin,du parcour ELEMENT_DATA, contient les lignes du tableau
-    // ce qui actualise le tableau
-=======
   async getUserGradings(userId:number){
     //on recupère les grading de la base de données de manière asynchrone 
     //(on attend le retour de la reponse) avant d'éffectuer tout autre action ) 
@@ -100,7 +68,6 @@ action:string;
     //on parcour les infos récupérées de la table grading puis on extrait que les infos necessaires 
     //pour les colonnes du tableau. A la fin,du parcour ELEMENT_DATA, contient les lignes du tableau
     //ce qui actualise le tableau  
->>>>>>> f93bd88f137d2f79abd26beacd59f944571e0bbc
     console.log(response);
     let i = 0;
     for (let entry of response) {
