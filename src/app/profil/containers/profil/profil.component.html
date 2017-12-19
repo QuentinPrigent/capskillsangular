@@ -1,42 +1,36 @@
-<p>
-  profil works!
-</p>
-<div *ngFor='let user of users'>
-<h5> {{user.email }} </h5>
+<!-- ********************     HEADER HTML   ************************ -->
+<mat-toolbar class='header'> 
+  <span> <img class="image-header" src='./assets/img/logocapskills.jpg'></span>
+  <span class = "space"></span>
+  <div layout="row" layout-wrap>
+     <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
+       <br/>
+     <div><button mat-raised-button (click)="referent($event)">Profil Référent</button> </div>
+  </div>
+</mat-toolbar>
+<div class = 'logimage'>
+  <img src='image' src = './assets/img/user.png' height="50px" width="50px">
+  {{currentUser.email}}
+</div>
+<!-- *************************************************************** -->
+ 
+<!-- <button (click)='addUser()'>Ajouter</button> -->
+
+<br>
+
+<div class="container-fluid">
+  <table id="tableCollaborator" class="table table-hover">
+    <tr class="table-header">
+      <th>Catégories</th>
+      <th>Compétences</th>
+      <th>Modifier</th>
+    </tr>
+    <tr *ngFor='let skill of skills; let i = index'>
+      <td>{{skills[i].skillType.skillTypeName}}</td>
+      <td>{{skills[i].name}}</td>
+      <td><span class="glyphicon glyphicon-pencil"></span></td>
+    </tr>
+  </table>
 </div>
 
-
-<button routerLink='/login'>Déco</button>
-
-<button (click)='addUser()'>Ajouter</button>
-
-<ngx-charts-bar-vertical
-[view]="view"
-[scheme]="colorScheme"
-[results]="single"
-[gradient]="gradient"
-[xAxis]="showXAxis"
-[yAxis]="showYAxis"
-[legend]="showLegend"
-[showXAxisLabel]="showXAxisLabel"
-[showYAxisLabel]="showYAxisLabel"
-[xAxisLabel]="xAxisLabel"
-[yAxisLabel]="yAxisLabel"
-(select)="onSelect($event)">
-</ngx-charts-bar-vertical>
-
-
-<ngx-charts-polar-chart
-[view]="view"
-[scheme]="colorScheme"
-[results]="polar"
-[gradient]="gradient"
-[xAxis]="showXAxis"
-[yAxis]="showYAxis"
-[legend]="showLegend"
-[showXAxisLabel]="showXAxisLabel"
-[showYAxisLabel]="showYAxisLabel"
-[xAxisLabel]="xAxisLabel"
-[yAxisLabel]="yAxisLabel"
-(select)="onSelect($event)">
-</ngx-charts-polar-chart>
+<button mat-raised-button routerLink='/bilan'>Bilan</button>

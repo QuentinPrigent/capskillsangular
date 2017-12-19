@@ -1,0 +1,187 @@
+/*HEADER CSS */
+
+.header {
+    background-color: white;
+    margin-left: 10px;
+}
+
+.image{
+    width: 300px;
+    padding-top: 25px;
+}
+
+.space{
+    flex: 1 1 auto;
+}
+
+/*TABLEAUREFERENT CSS*/
+
+.titretableau{
+    font-size: 20px;
+}
+
+.container{
+    margin-top: 5%;
+}
+
+/*BUTTONS ALIGNEMENT*/
+
+.buttonalignement{
+  display: flex;
+  flex-direction: column;
+  float : right;
+}
+
+/*DECONNEXION BUTTON CSS*/
+.button {
+    border-radius: 4px;
+    background-color: #007dba;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 15px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  /*COLLABORATOR MODE BUTTON CSS*/
+
+  .button2 {
+    border-radius: 4px;
+    background-color: #007dba;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    margin-right: 10x;
+  }
+  
+  .button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button2:hover span {
+    padding-right: 25px;
+  }
+  
+  .button2:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+
+
+  /*COLLABORATOR SEARCH BUTTON CSS*/
+
+  .searchbutton{
+    float: right;
+    margin-right: 10px;
+    margin-top: 150px;;
+  }
+
+  /*NIVEAU CSS*/
+.Niveau{
+  font-size: 35px;
+}
+  
+  /*RATING STARS CSS*/
+
+div.stars {
+  width: 270px;
+  display: inline-block;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 20px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+
+
+.level{
+  display: flex;
+  font-size: 25px;
+}
+
+
+/*LISTBUTTON CSS*/
+.listbutton{
+  font-size : 20px;
+  font-family: Verdana, sans-serif;
+}
+
+
+
+.level{
+  display: flex;
+  font-size: 25px;
+}

@@ -1,0 +1,147 @@
+<!--  HEADER HTML -->
+
+<div class='header'>
+  <span>
+    <img class='image' src='./assets/img/logocapskills.jpg'> </span>
+  <span class="space"></span>
+  <div class="buttonalignement">
+    <a href="login" routerLink="/">
+      <button class="button">
+        <span>Deconnexion </span>
+      </button>
+    </a>
+    
+    <button class="button2">
+      <span>Mode Collaborateur </span>
+    </button>
+  </div>
+</div>
+
+<!--  TABLEAU REFERENT -->
+
+<div class="container">
+  <h2 class="titretableau">Collaborateurs dont vous êtes le référent</h2>
+  <br>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jules</td>
+        <td>TABERLY</td>
+        <td>jules.taberly@capgemini.com</td>
+      </tr>
+      <tr>
+        <td>Quentin</td>
+        <td>PRIGENT</td>
+        <td>quentin.prigent@capgemini.com</td>
+      </tr>
+      <tr>
+        <td>Cécile</td>
+        <td>BOUGMA</td>
+        <td>cecile.bougma@capgemini.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!--COLLABORATOR SEARCH MODAL -->
+<!------------------------------>
+
+<!-- Trigger the modal with a button -->
+
+<span class="searchbutton">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Rechercher collaborateur</button>
+</span>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sélectionner une compétence</h4>
+      </div>
+
+
+      <div class="modal-body">
+
+        <!--FIRT DROPDOWN SELECTION FOR SKILL TYPES -->
+        <div class="listbutton">
+          <select name="Catégories">
+            <option value="Catégorie1" selected="selected">Catégorie1 </option>
+            <option value="Catégorie2">Catégorie2 </option>
+            <option value="Catégorie3">Catégorie3 </option>
+            <option value="Catégorie4">Catégorie4 </option>
+            <option value="Catégorie5">Catégorie5 </option>
+            <option value="Catégorie6">Cétégorie6 </option>
+          </select>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <!--SECOND DROPDOWN SELECTION FOR SKILL TYPES -->
+        <div class="listbutton">
+          <select name="Compétences">
+            <option value="Compétence1 " selected="selected">Compétence1 </option>
+            <option value="Compétence2">Compétence2 </option>
+            <option value="Compétence3">Compétence3 </option>
+            <option value="Compétence4">Compétence4 </option>
+            <option value="Compétence5">Compétence5 </option>
+            <option value="Compétence6">Compétence6 </option>
+          </select>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+
+
+        <!--STAR RATING -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <div class="level">
+          <div>Niveau</div>
+          <div class="stars">
+            <form action="">
+              <input class="star star-5" id="star-5" type="radio" name="star" />
+              <label class="star star-5" for="star-5"></label>
+              <input class="star star-4" id="star-4" type="radio" name="star" />
+              <label class="star star-4" for="star-4"></label>
+              <input class="star star-3" id="star-3" type="radio" name="star" />
+              <label class="star star-3" for="star-3"></label>
+              <input class="star star-2" id="star-2" type="radio" name="star" />
+              <label class="star star-2" for="star-2"></label>
+              <input class="star star-1" id="star-1" type="radio" name="star" />
+              <label class="star star-1" for="star-1"></label>
+            </form>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+        
+        
+        <div class="modal-footer">
+          <br>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

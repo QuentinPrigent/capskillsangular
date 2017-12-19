@@ -1,0 +1,42 @@
+<!-- ********************     HEADER HTML   ************************ -->
+<mat-toolbar class='header'> 
+  <span> <img class="image-header" src='./assets/img/logocapskills.jpg'></span>
+  <span class = "space"></span>
+  <div layout="row" layout-wrap>
+     <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
+       <br/>
+     <div><button mat-raised-button>Profil Référent</button> </div>
+  </div>
+</mat-toolbar>
+<div class = 'logimage'>
+  <img src='image' src = './assets/img/user.png' height="50px" width="50px">
+  {{currentUser.email}}
+</div>
+<!-- *************************************************************** -->
+
+<div>
+  <div>
+    <ngx-charts-polar-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="polar"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect($event)">
+    </ngx-charts-polar-chart>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field>
+      <textarea matInput placeholder="Commentaires"></textarea>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="back-button"> <button mat-raised-button width="30" bgcolor="FFFFF" routerLink='/profil'>Retour</button></div>

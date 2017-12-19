@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule, MatButton } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { ProfilModule } from '../profil/profil.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ProfilModule
   ],
   exports: [ LoginComponent ],
   declarations: [ LoginComponent ]
