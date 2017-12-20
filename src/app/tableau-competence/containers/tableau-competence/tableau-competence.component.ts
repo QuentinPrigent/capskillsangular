@@ -101,20 +101,11 @@ action: string;
   }
 // utiliser pour modifier les grading lors de l'appui sur les crayons
  openTableauCompetenceUpdate(elt: Element, row: number): void {
-<<<<<<< HEAD
     console.log('ligne :'+row);
    const dialogRef = this.dialog.open(TableauCompetenceUpdateComponent , {height: '250px', width: '350px', data: 
     {gradingId:elt.gradingId,skillTypeId:elt.skillTypeId, skillTypeName: elt.skillTypeName, skillId:elt.skillId,skillName: elt.skillName,
       actualGrade: elt.actualGrade, targetGrade: elt.targetGrade, collaboratorGrade: elt.collaboratorGrade,userId:elt.userId 
       ,title:"Modifier",action:'update' }});
-=======
-    console.log('ligne :' + row);
-   const dialogRef = this.dialog.open(TableauCompetenceUpdateComponent , {height: '250px', width: '350px', data:
-    {gradingId: elt.gradingId, skillTypeId: elt.skillTypeId, skillTypeName: elt.skillTypeName, 
-      skillId: elt.skillId, skillName: elt.skillName,
-      actualGrade: elt.actualGrade, targetGrade: elt.targetGrade, collaboratorGrade: elt.collaboratorGrade,userId:elt.userId
-      , title: 'update...', action: 'update' }});
->>>>>>> master
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
         console.log('The dialog was closed', result);
