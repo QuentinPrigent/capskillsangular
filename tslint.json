@@ -11,6 +11,9 @@
       "check-space"
     ],
     "curly": true,
+    "deprecation": {
+      "severity": "warn"
+    },
     "eofline": true,
     "forin": true,
     "import-blacklist": [
@@ -118,13 +121,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "skills",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "skills",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
