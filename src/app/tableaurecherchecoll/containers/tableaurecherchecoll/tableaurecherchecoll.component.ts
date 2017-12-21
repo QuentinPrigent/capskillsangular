@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../user';
 
 @Component({
   selector: 'skills-tableaurecherchecoll',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableaurecherchecollComponent implements OnInit {
 
-  constructor() { }
+  currentUser: User;
+
+  retourAccueilReferent($event) {
+    window.location.href = './accueilreferent';
+  }
+
+  logout($event) {
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
+    window.location.href = './login';
+  }
+
+  constructor() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
   ngOnInit() {
   }

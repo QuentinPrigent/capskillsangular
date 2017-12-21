@@ -17,6 +17,10 @@ export class TableaureferentComponent implements OnInit {
     window.location.href = './login';
   }
 
+  rechercherCollaborateur($event) {
+    window.location.href = './recherchecoll';
+  }
+
   constructor() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
