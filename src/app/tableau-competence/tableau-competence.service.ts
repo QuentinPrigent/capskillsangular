@@ -9,7 +9,7 @@ export class TableauCompetenceService {
   constructor(public http: HttpClient) { }
   URL: 'http://localhost:1214';
   getSkillTypes() {
-    return this.http.get('http://localhost:1214/skill-types/' );
+    return this.http.get('http://localhost:1214/skill-types/');
   }
 
 
@@ -27,19 +27,19 @@ export class TableauCompetenceService {
   }
 
   postGrading(grading: any) {
-     let response = this.http.post('http://localhost:1214/grading/addGrading/?' + 'actualgrade=' + grading.actualGrade
-     + '&userId=' + grading.userId + '+&skillId=' + grading.skillId, '');
-     console.log(response);
-     return response;
+    let response = this.http.post('http://localhost:1214/grading/addGrading/?' + 'actualgrade=' + grading.actualGrade
+      + '&userId=' + grading.userId + '+&skillId=' + grading.skillId, '');
+    console.log(response);
+    return response;
   }
 
   updadteGrading(grading: any) {
     let response = this.http.put('http://localhost:1214/grading/' + grading.gradingId + '?actualgrade=' + grading.actualGrade
-    + '&userId=' + grading.userId + '+&skillId=' + grading.skillId + '+&collaboratorgrade=' + grading.collaboratorGrade + '+&targetgrade=' 
-    + grading.targetGrade, '' );
+      + '&userId=' + grading.userId + '+&skillId=' + grading.skillId + '+&collaboratorgrade=' + grading.collaboratorGrade + '+&targetgrade='
+      + grading.targetGrade, '');
     console.log(response);
     return response;
- }
+  }
 }
 
 /*export interface Grad{

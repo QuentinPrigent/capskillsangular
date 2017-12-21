@@ -10,14 +10,14 @@ import { TableaureferentComponent } from './accueilreferent/Containers/tableaure
 import { TableauCompetenceComponent } from './tableau-competence/containers/tableau-competence/tableau-competence.component';
 
 const routes: Routes = [
-  {path : '', redirectTo: 'login', pathMatch: 'full'},
-  {path : 'login', component : LoginComponent},
-  {path : 'bilan', component : BilanComponent },
-  {path : 'accueilreferent', component : TableaureferentComponent},
-  {path : 'recherchecoll', component : TableaurecherchecollComponent},
-  {path : 'profil', component : ProfilComponent},
-  {path : 'tabconscomp', component : TabconscompComponent},
-  {path : 'TableauCompetenceComponent', component : TableauCompetenceComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'bilan', component: BilanComponent },
+  { path: 'accueilreferent', component: TableaureferentComponent },
+  { path: 'recherchecoll', component: TableaurecherchecollComponent },
+  { path: 'profil', component: ProfilComponent },
+  { path: 'tabconscomp', component: TabconscompComponent },
+  { path: 'TableauCompetenceComponent', component: TableauCompetenceComponent }
 ];
 
 @NgModule({

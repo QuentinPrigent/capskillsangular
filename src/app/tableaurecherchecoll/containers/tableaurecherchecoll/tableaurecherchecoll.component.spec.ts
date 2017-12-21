@@ -8,9 +8,9 @@ describe('TableaurecherchecollComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableaurecherchecollComponent ]
+      declarations: [TableaurecherchecollComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

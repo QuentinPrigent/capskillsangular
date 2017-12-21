@@ -1,7 +1,7 @@
 import { UsersService } from './../../../users.service';
 import { Component, OnInit } from '@angular/core';
-import {single} from './data';
-import {polar} from './polardata';
+import { single } from './data';
+import { polar } from './polardata';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../../../user';
 
@@ -22,7 +22,7 @@ export class ProfilComponent implements OnInit {
   referent(event) {
     if (this.currentUser.referent === true) {
       window.location.href = '/accueilreferent';
-    }else {
+    } else {
       alert('Vous n\'êtes pas référent');
     }
   }

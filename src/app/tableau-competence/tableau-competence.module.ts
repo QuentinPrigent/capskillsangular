@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatFormFieldModule, MatTableModule, MatCardModule, MatIconModule, MatInputModule,
-  MatDialogModule, MatButtonModule } from '@angular/material';
-  import {MatSelectModule} from '@angular/material/select';
+import {
+  MatFormFieldModule, MatTableModule, MatCardModule, MatIconModule, MatInputModule,
+  MatDialogModule, MatButtonModule
+} from '@angular/material';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule, MatToolbar } from '@angular/material/toolbar';
-import {MatTableDataSource, MatSort} from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 import { TableauCompetenceComponent, TableauCompetenceUpdateComponent } from './containers/tableau-competence/tableau-competence.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { StarRatingModule } from 'angular-star-rating';
-import {OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent} from 'angular-star-rating';
-import {HttpModule} from '@angular/http';
+import { OnClickEvent, OnRatingChangeEven, OnHoverRatingChangeEvent } from 'angular-star-rating';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { TableauCompetenceService } from './tableau-competence.service';
 
@@ -39,8 +41,8 @@ import { TableauCompetenceService } from './tableau-competence.service';
     HttpClientModule,
     MatSelectModule
   ],
-  providers : [TableauCompetenceService],
-  exports: [ TableauCompetenceComponent ],
+  providers: [TableauCompetenceService],
+  exports: [TableauCompetenceComponent],
   declarations: [TableauCompetenceComponent, TableauCompetenceUpdateComponent],
   entryComponents: [TableauCompetenceUpdateComponent]
 })

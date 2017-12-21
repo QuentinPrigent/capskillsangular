@@ -8,9 +8,9 @@ describe('TableauCompetenceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauCompetenceComponent ]
+      declarations: [TableauCompetenceComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

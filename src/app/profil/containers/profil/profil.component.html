@@ -1,19 +1,24 @@
 <!-- ********************     HEADER HTML   ************************ -->
-<mat-toolbar class='header'> 
-  <span> <img class="image-header" src='./assets/img/logocapskills.jpg'></span>
-  <span class = "space"></span>
+<mat-toolbar class='header'>
+  <span>
+    <img class="image-header" src='./assets/img/logocapskills.jpg'>
+  </span>
+  <span class="space"></span>
   <div layout="row" layout-wrap>
-     <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
-       <br/>
-     <div><button mat-raised-button (click)="referent($event)">Profil Référent</button> </div>
+    <div>
+      <button mat-raised-button routerLink='/login'>Déconnexion</button>
+    </div>
+    <br/>
+    <div>
+      <button mat-raised-button (click)="referent($event)">Profil Référent</button>
+    </div>
   </div>
 </mat-toolbar>
-<div class = 'logimage'>
-  <img src='image' src = './assets/img/user.png' height="50px" width="50px">
-  {{currentUser.email}}
+<div class='logimage'>
+  <img src='image' src='./assets/img/user.png' height="50px" width="50px"> {{currentUser.email}}
 </div>
 <!-- *************************************************************** -->
- 
+
 <!-- <button (click)='addUser()'>Ajouter</button> -->
 
 <br>
@@ -28,7 +33,9 @@
     <tr *ngFor='let skill of skills; let i = index'>
       <td>{{skills[i].skillType.skillTypeName}}</td>
       <td>{{skills[i].name}}</td>
-      <td><span class="glyphicon glyphicon-pencil"></span></td>
+      <td>
+        <span class="glyphicon glyphicon-pencil"></span>
+      </td>
     </tr>
   </table>
 </div>

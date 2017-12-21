@@ -42,7 +42,7 @@ export class UsersService {
 
   addUser(params) {
     // tslint:disable-next-line:max-line-length
-    return this.http.post(`http://localhost:1214/users/?firstname=sdwsdds&lastname=sdwsd&email=sddsd.taberly@capgemini.com&password=jaimelesbokits`, null );
+    return this.http.post(`http://localhost:1214/users/?firstname=sdwsdds&lastname=sdwsd&email=sddsd.taberly@capgemini.com&password=jaimelesbokits`, null);
   }
 
 }

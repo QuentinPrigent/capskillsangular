@@ -26,7 +26,7 @@ import { MatToolbarModule } from '@angular/material';
     MatInputModule
 
   ],
-  providers : [],
+  providers: [],
   declarations: [ProfilComponent, BilanComponent],
   exports: [ProfilComponent, BilanComponent]
 })

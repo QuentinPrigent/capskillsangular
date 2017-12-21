@@ -22,8 +22,8 @@ import { ProfilModule } from '../profil/profil.module';
     MatButtonModule,
     ProfilModule
   ],
-  exports: [ LoginComponent ],
-  declarations: [ LoginComponent ]
+  exports: [LoginComponent],
+  declarations: [LoginComponent]
 })
 export class LoginModule { }
 

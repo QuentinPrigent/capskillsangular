@@ -56,10 +56,10 @@ export class BilanComponent implements OnInit {
 
   constructor(private service: UsersService, private route: ActivatedRoute) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    Object.assign(this, {single});
-    Object.assign(this, {polar});
-   }
-   onSelect(event) {
+    Object.assign(this, { single });
+    Object.assign(this, { polar });
+  }
+  onSelect(event) {
     console.log(event);
   }
 
