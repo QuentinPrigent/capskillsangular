@@ -1,17 +1,22 @@
-<mat-toolbar class = 'header'> 
-    <span> <img class = 'image' src = './assets/img/logocapskills.jpg'>  </span>
-   <span class = "space"></span>
-   <div layout="row" layout-wrap>
-     <br/> <br/>
-      <div flex="50"> <button (click)='logout($event)' mat-raised-button width="30" bgcolor="FFFFF">Déconnexion</button></div>
-      <br/>
-      <div flex="50" margin-top="20px"><button mat-raised-button (click)="referent($event)">Profil Référent</button> </div>
-   </div>
-  </mat-toolbar>
-  <div class = 'logimage'>
-    <img src='image' src = './assets/img/user.png' height="50px" width="50px">
-    {{currentUser.email}}
+<div class='header'>
+  <span>
+    <img class='image' src='./assets/img/logocapskills.jpg'> </span>
+  <span class="space"></span>
+  <div class="buttonalignement">
+    <a href="login" routerLink="/">
+      <button class="button">
+        <span>Déconnexion </span>
+      </button>
+    </a>
+      <button class="button2" (click)='referent($event)'>
+        <span>Mode Référent </span>
+      </button>
   </div>
+</div>
+<div class = 'logimage'>
+  <img src='image' src = './assets/img/user.png' height="50px" width="50px">
+  {{currentUser.email}}
+</div>
 
 <fieldset class="fieldsetSection">
     <legend>Tableau des compétences</legend>
@@ -19,7 +24,7 @@
 
       <div style="padding-left: 67%;">
       <form class="form-search form-inline">
-          <input type="text" class="search-query"  (keyup)="applyFilter($event.target.value)"  placeholder="rechercher..." />
+          <input type="text" class="search-query"  (keyup)="applyFilter($event.target.value)"  placeholder="Rechercher..." />
      </form>
     </div>
 <div class="section mat-elevation-z8" >
