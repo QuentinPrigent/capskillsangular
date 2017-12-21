@@ -1,13 +1,21 @@
 <!-- ********************     HEADER HTML   ************************ -->
-<mat-toolbar class='header'> 
-  <span> <img class="image-header" src='./assets/img/logocapskills.jpg'></span>
-  <span class = "space"></span>
-  <div layout="row" layout-wrap>
-     <div> <button mat-raised-button routerLink='/login'>Déconnexion</button></div>
-       <br/>
-     <div><button mat-raised-button>Profil Référent</button> </div>
+<div class='header'>
+  <span>
+    <img class='image' src='./assets/img/logocapskills.jpg'> </span>
+  <span class="space"></span>
+  <div class="buttonalignement">
+    <a href="login" routerLink="/">
+      <button class="button">
+        <span>Deconnexion </span>
+      </button>
+    </a>
+    <a href="TableauCompetenceComponent" routerLink="/">   
+      <button class="button2">
+        <span>Mode Collaborateur </span>
+      </button>
+    </a>
   </div>
-</mat-toolbar>
+</div>
 <div class = 'logimage'>
   <img src='image' src = './assets/img/user.png' height="50px" width="50px">
   {{currentUser.email}}
