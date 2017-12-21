@@ -9,7 +9,13 @@ import { User } from '../../../user';
 })
 export class TableaureferentComponent implements OnInit {
 
-currentUser: User;
+  currentUser: User;
+
+  logout($event) {
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
+    window.location.href = './login';
+  }
 
   constructor() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

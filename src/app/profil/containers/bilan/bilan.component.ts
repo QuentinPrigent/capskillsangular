@@ -36,6 +36,20 @@ export class BilanComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
+  logout($event) {
+    localStorage.removeItem('currentUser');
+    this.currentUser = null;
+    window.location.href = './login';
+  }
+
+  referent($event) {
+    if (this.currentUser.referent === true) {
+      window.location.href = './accueilreferent';
+    } else {
+      alert('Vous n\'êtes pas référent');
+    }
+  }
+
   retourProfil($event) {
     window.location.href = './TableauCompetenceComponent';
   }

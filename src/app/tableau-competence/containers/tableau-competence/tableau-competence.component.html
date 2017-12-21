@@ -3,11 +3,9 @@
     <img class='image' src='./assets/img/logocapskills.jpg'> </span>
   <span class="space"></span>
   <div class="buttonalignement">
-    <a href="login" routerLink="/">
-      <button class="button">
+      <button class="button" (click)='logout($event)'>
         <span>Déconnexion </span>
       </button>
-    </a>
       <button class="button2" (click)='referent($event)'>
         <span>Mode Référent </span>
       </button>

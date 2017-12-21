@@ -1,3 +1,4 @@
+import { User } from './../../../user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabconscompComponent implements OnInit {
 
-  constructor() { }
+  currentUser: User;
+
+  retourAccueilReferent($event) {
+    window.location.href = './accueilreferent';
+  }
+
+  constructor() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
   ngOnInit() {
   }

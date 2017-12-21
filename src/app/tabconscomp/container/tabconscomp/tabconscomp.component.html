@@ -3,14 +3,18 @@
     <img class='image' src='./assets/img/logocapskills.jpg'> </span>
   <span class="space"></span>
   <div class="buttonalignement">
-  <button class="button">
-    <span>Deconnexion </span>
-  </button>
-  <button class="button2">
-    <span>Mode Collaborateur </span>
-  </button>
- </div>
- </div>
+    <button class="button">
+      <span>Déconnexion </span>
+    </button>
+    <button class="button2">
+      <span>Mode Collaborateur </span>
+    </button>
+  </div>
+</div>
+<div class = 'logimage'>
+    <img src='image' src = './assets/img/user.png' height="50px" width="50px">
+    {{currentUser.email}}
+  </div>
 
 
 
@@ -25,141 +29,126 @@
     <div class="list">
 
       <p>
-        NOM : GIACOMO
-        <br> Prénom : Pierre
-        <br> Division : CSD
-        <br> Projet en cours : POE JAVA
-        <br> Statut : Interco
+        NOM : TABERLY
+        <br> Prénom : Jules
+        <br> Division : ADM
+        <br> Projet en cours : ANTAI
+        <br> Statut : Début CDI 08/01/2018
         <br>
       </p>
 
     </div>
-    <!DOCTYPE html>
-    <html lang="en">
 
-   
+    <!--COLLABORATOR SEARCH MODAL -->
 
-      <!--COLLABORATOR SEARCH MODAL -->
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
 
-
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Ajouter une compétence</h4>
-      </div>
-
-
-      <div class="modal-body">
-
-        <!--FIRT DROPDOWN SELECTION FOR SKILL TYPES -->
-        <div class="listbutton">
-          <select name="Catégories">
-            <option value="Catégorie1" selected="selected">Catégorie1 </option>
-            <option value="Catégorie2">Catégorie2 </option>
-            <option value="Catégorie3">Catégorie3 </option>
-            <option value="Catégorie4">Catégorie4 </option>
-            <option value="Catégorie5">Catégorie5 </option>
-            <option value="Catégorie6">Cétégorie6 </option>
-          </select>
-        </div>
-
-        <br>
-        <br>
-        <br>
-
-        <!--SECOND DROPDOWN SELECTION FOR SKILL TYPES -->
-        <div class="container">
-          <div class="row">
-            
-                   <div id="custom-search-input">
-                                    <div class="input-group col-md-12">
-                                        <input type="text" class="  search-query form-control" placeholder="Saisir Compétence" />
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-danger" type="button">
-                                                <span class=" glyphicon glyphicon-search"></span>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Ajouter une compétence</h4>
           </div>
-        </div>
-
-        <br>
-        <br>
-        <br>
 
 
+          <div class="modal-body">
 
-        <!--STAR RATING -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-        <div class="level">
-          <div>Niveau actuel</div>
-          <div class="stars">
-            <form action="">
-              <input class="star star-5" id="star-5" type="radio" name="star" />
-              <label class="star star-5" for="star-5"></label>
-              <input class="star star-4" id="star-4" type="radio" name="star" />
-              <label class="star star-4" for="star-4"></label>
-              <input class="star star-3" id="star-3" type="radio" name="star" />
-              <label class="star star-3" for="star-3"></label>
-              <input class="star star-2" id="star-2" type="radio" name="star" />
-              <label class="star star-2" for="star-2"></label>
-              <input class="star star-1" id="star-1" type="radio" name="star" />
-              <label class="star star-1" for="star-1"></label>
-            </form>
+            <!--FIRT DROPDOWN SELECTION FOR SKILL TYPES -->
+            <div class="listbutton">
+              <select name="Catégories">
+                <option value="Catégorie1" selected="selected">Catégorie1 </option>
+                <option value="Catégorie2">Catégorie2 </option>
+                <option value="Catégorie3">Catégorie3 </option>
+                <option value="Catégorie4">Catégorie4 </option>
+                <option value="Catégorie5">Catégorie5 </option>
+                <option value="Catégorie6">Cétégorie6 </option>
+              </select>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!--SECOND DROPDOWN SELECTION FOR SKILL TYPES -->
+            <div class="container">
+              <div class="row">
+
+                <div id="custom-search-input">
+                  <div class="input-group col-md-12">
+                    <input type="text" class="  search-query form-control" placeholder="Saisir Compétence" />
+                    <span class="input-group-btn">
+                      <button class="btn btn-danger" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+
+
+            <!--STAR RATING -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+            <div class="level">
+              <div>Niveau actuel</div>
+              <div class="stars">
+                <form action="">
+                  <input class="star star-5" id="star-5" type="radio" name="star" />
+                  <label class="star star-5" for="star-5"></label>
+                  <input class="star star-4" id="star-4" type="radio" name="star" />
+                  <label class="star star-4" for="star-4"></label>
+                  <input class="star star-3" id="star-3" type="radio" name="star" />
+                  <label class="star star-3" for="star-3"></label>
+                  <input class="star star-2" id="star-2" type="radio" name="star" />
+                  <label class="star star-2" for="star-2"></label>
+                  <input class="star star-1" id="star-1" type="radio" name="star" />
+                  <label class="star star-1" for="star-1"></label>
+                </form>
+              </div>
+            </div>
+
+            <br>
+
+            <!--STAR RATING TEST -->
+            <div class="level2">
+              <div>Niveau ciblé</div>
+              <div class="starss">
+                <form action="">
+                  <input class="stara stara-10" id="stara-5" type="radio" name="stara" />
+                  <label class="stara stara-10" for="stara-5"></label>
+                  <input class="stara stara-9" id="stara-4" type="radio" name="stara" />
+                  <label class="stara stara-9" for="stara-4"></label>
+                  <input class="stara stara-8" id="stara-3" type="radio" name="stara" />
+                  <label class="stara stara-8" for="stara-3"></label>
+                  <input class="stara stara-7" id="stara-2" type="radio" name="stara" />
+                  <label class="stara stara-7" for="stara-2"></label>
+                  <input class="stara stara-6" id="stara-1" type="radio" name="stara" />
+                  <label class="stara stara-6" for="stara-1"></label>
+                </form>
+              </div>
+            </div>
+
+
+            <br>
+            <br>
+
+            <div class="modal-footer">
+              <br>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            </div>
           </div>
-        </div>
 
-        <br>
-        
-        <!--STAR RATING TEST -->
-              <div class="level2">
-          <div>Niveau ciblé</div>
-          <div class="starss">
-            <form action="">
-              <input class="stara stara-10" id="stara-5" type="radio" name="stara" />
-              <label class="stara stara-10" for="stara-5"></label>
-              <input class="stara stara-9" id="stara-4" type="radio" name="stara" />
-              <label class="stara stara-9" for="stara-4"></label>
-              <input class="stara stara-8" id="stara-3" type="radio" name="stara" />
-              <label class="stara stara-8" for="stara-3"></label>
-              <input class="stara stara-7" id="stara-2" type="radio" name="stara" />
-              <label class="stara stara-7" for="stara-2"></label>
-              <input class="stara stara-6" id="stara-1" type="radio" name="stara" />
-              <label class="stara stara-6" for="stara-1"></label>
-            </form>
-          </div>
-        </div>
-
-
-        <br>
-        <br>
-
-        <div class="modal-footer">
-          <br>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
         </div>
       </div>
-
     </div>
-  </div>
-</div>
-
-     
-
-        
-
-  
-
-    </html>
-
 
 
 
@@ -181,38 +170,45 @@
           <td>Java</td>
           <td>note1</td>
           <td>note2</td>
-          <td><label><input type="checkbox" value="">Valider</label></td>
+          <td>
+            <label>
+              <input type="checkbox" value="">Valider</label>
+          </td>
         </tr>
         <tr>
           <td>Général</td>
           <td>Redmine</td>
           <td>note1</td>
           <td>note2</td>
-          <td><label><input type="checkbox" value="">Valider</label></td>
+          <td>
+            <label>
+              <input type="checkbox" value="">Valider</label>
+          </td>
         </tr>
         <tr>
           <td>Général</td>
           <td>Redmine</td>
           <td>note1</td>
           <td>note2</td>
-          <td><label><input type="checkbox" value="">Valider</label></td>
+          <td>
+            <label>
+              <input type="checkbox" value="">Valider</label>
+          </td>
         </tr>
       </tbody>
     </table>
-    </div>
-
-    <br>
-    <br>
-    <div class='cards-container'>
-      <button class="button3">
-        <span>Retour </span>
-      </button>
-      <button class="button4 btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-        <span>Ajouter une compétence </span>
-      </button>
-      <button class="button5">
-        <span>Voir Bilan </span>
-      </button>
-    </div>
-
   </div>
+
+  <div class='cards-container'>
+    <button class="button3" (click)=retourAccueilReferent($event)>
+      <span>Retour</span>
+    </button>
+    <button class="button4 btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+      <span>Ajouter une compétence</span>
+    </button>
+    <button class="button5">
+      <span>Voir Bilan</span>
+    </button>
+  </div>
+
+</div>

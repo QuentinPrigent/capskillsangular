@@ -5,11 +5,9 @@
     <img class='image' src='./assets/img/logocapskills.jpg'> </span>
   <span class="space"></span>
   <div class="buttonalignement">
-    <a href="login" routerLink="/">
-      <button class="button">
-        <span>Deconnexion </span>
+      <button class="button" (click)='logout($event)'>
+        <span>Déconnexion </span>
       </button>
-    </a>
     <a href="TableauCompetenceComponent" routerLink="/">   
       <button class="button2">
         <span>Mode Collaborateur </span>
@@ -38,9 +36,9 @@
     </thead>
     <tbody>
       <tr>
-        <td>Jules</td>
-        <td>TABERLY</td>
-        <td>jules.taberly@capgemini.com</td>
+        <td><a href='./tabconscomp'>Jules</a></td>
+        <td><a href='./tabconscomp'>TABERLY</a></td>
+        <td><a href='./tabconscomp'>jules.taberly@capgemini.com</a></td>
       </tr>
       <tr>
         <td>Quentin</td>
